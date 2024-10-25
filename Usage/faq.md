@@ -2,6 +2,7 @@
 order: -20
 icon: question
 ---
+
 # FAQ
 
 ## Explain what SillyTavern is about
