@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.782779011121">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783160948194">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -35,11 +35,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="resources/css/retype.css?v=3.6.0.782779011121" rel="stylesheet">
+    <link href="resources/css/retype.css?v=3.6.0.783160948194" rel="stylesheet">
 
-    <script data-cfasync="false" src="resources/js/config.js?v=3.6.0.782779011121" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="resources/js/config.js?v=3.6.0.783160948194" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.6.0.782779011121" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="resources/js/lunr.js?v=3.6.0.783160948194" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -53,8 +53,23 @@
         body {
             font-family: Noto Sans;
         }
+
+        .callout {
+          padding: 1rem;
+          margin-bottom: 1rem;
+          border: 1px solid #d2d6dc;
+          border-radius: 0.375rem;
+          background-color: #f0f4f8;
+        }
+        .callout p {
+          margin-bottom: 0.5rem !important;
+        }
+        .callout p:last-child {
+          margin-bottom: 0 !important;
+        }
     </Style>
     <link href="https://sillytavern.app/webfonts/NotoSans/stylesheet.css" rel="stylesheet">
+
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -243,10 +258,10 @@
 <p>The hardware requirements are minimal: it will run on anything that can run NodeJS 18 or higher. If you intend to do LLM inference on your local machine, we recommend a 3000-series NVIDIA graphics card with at least 6GB of VRAM.</p>
 <p>Follow the installation guide for your platform:</p>
 <ul>
-<li><a href="https://docs.sillytavern.app/installation/windows/">Windows</a></li>
-<li><a href="https://docs.sillytavern.app/installation/linuxmacos/">Linux and Mac</a></li>
-<li><a href="https://docs.sillytavern.app/installation/android-(termux)/">Android</a></li>
-<li><a href="https://docs.sillytavern.app/installation/docker/">Docker</a></li>
+<li><a href="installation/windows/">Windows</a></li>
+<li><a href="installation/linuxmacos/">Linux and Mac</a></li>
+<li><a href="installation/android/">Android</a></li>
+<li><a href="installation/docker/">Docker</a></li>
 </ul>
 <doc-anchor-target id="branches">
     <h2>
@@ -259,7 +274,6 @@
 <li><code v-pre>release</code> -<span class="docs-emoji">&#x1F31F;</span> <strong>Recommended for most users.</strong> This is the most stable and recommended branch, updated only when major releases are pushed. It&#x27;s suitable for the majority of users. Typically updated once a month.</li>
 <li><code v-pre>staging</code> - <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>Not recommended for casual use.</strong> This branch has the latest features, but be cautious as it may break at any time. Only for power users and enthusiasts. Updates several times daily.</li>
 </ul>
-<p>Learn more <a href="https://docs.sillytavern.app/usage/branches/">here</a>.</p>
 <doc-anchor-target id="what-do-i-need-other-than-sillytavern">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#what-do-i-need-other-than-sillytavern">#</doc-anchor-trigger>
@@ -301,12 +315,12 @@
 </doc-anchor-target>
 <p>SillyTavern has extensibility support.</p>
 <ul>
-<li><a href="https://docs.sillytavern.app/extensions/expression-images/">Character emotional expressions (sprites)</a></li>
-<li><a href="https://docs.sillytavern.app/extensions/summarize/">Auto-Summary of the chat history</a></li>
+<li><a href="extensions/expression-images/">Character emotional expressions (sprites)</a></li>
+<li><a href="extensions/summarize/">Auto-Summary of the chat history</a></li>
 <li>Automatic UI and chat translation</li>
-<li><a href="https://docs.sillytavern.app/extensions/stable-diffusion/">Stable Diffusion/FLUX/DALL-E image generation</a></li>
-<li><a href="https://docs.sillytavern.app/extensions/tts/">Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS&#x27;s System TTS)</a></li>
-<li><a href="https://docs.sillytavern.app/extensions/websearch/">Web Search capabilities for adding additional real world context to your prompts</a></li>
+<li><a href="extensions/stable-diffusion/">Stable Diffusion/FLUX/DALL-E image generation</a></li>
+<li><a href="extensions/tts/">Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS&#x27;s System TTS)</a></li>
+<li><a href="extensions/websearch/">Web Search capabilities for adding additional real world context to your prompts</a></li>
 <li>Many more are available to download from the &quot;Download Extensions &amp; Assets&quot; menu.</li>
 </ul>
 <doc-anchor-target id="how-can-i-get-in-touch-with-the-developers-directly">
@@ -366,10 +380,10 @@
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="installation/windows/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l rounded-r-lg transition-colors duration-150 relative hover:z-5" href="installation/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Windows</span>
+                                                <span class="block mt-1">Installation</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>

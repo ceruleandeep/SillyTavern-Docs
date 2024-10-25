@@ -6,39 +6,40 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.782779011121">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783160948194">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>SillyTavern 1.12.0 Migration Guide | docs.ST.app</title>
-    <meta name="title" content="SillyTavern 1.12.0 Migration Guide | docs.ST.app">
-    <meta name="description" content="SillyTavern 1.12.0 (codename the \"Neo Server\" update) includes several critical changes that may affect the way you use SillyTavern.">
+    <title>Quick Start | docs.ST.app</title>
+    <meta name="title" content="Quick Start | docs.ST.app">
+    <meta name="description" content="I'm clueless. Just spoonfeed me the easiest and fastest way I can start using SillyTavern. -- Anonymous">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.sillytavern.app/installation/st-1.12.0-migration-guide/">
+    <link rel="canonical" href="https://docs.sillytavern.app/usage/quick-start/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.sillytavern.app/installation/st-1.12.0-migration-guide/">
-    <meta property="og:title" content="SillyTavern 1.12.0 Migration Guide | docs.ST.app">
-    <meta property="og:description" content="SillyTavern 1.12.0 (codename the \"Neo Server\" update) includes several critical changes that may affect the way you use SillyTavern.">
+    <meta property="og:url" content="https://docs.sillytavern.app/usage/quick-start/">
+    <meta property="og:title" content="Quick Start | docs.ST.app">
+    <meta property="og:description" content="I'm clueless. Just spoonfeed me the easiest and fastest way I can start using SillyTavern. -- Anonymous">
+    <meta property="og:image" content="https://docs.sillytavern.app/static/quick-start/1_name.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.sillytavern.app/installation/st-1.12.0-migration-guide/">
-    <meta property="twitter:title" content="SillyTavern 1.12.0 Migration Guide | docs.ST.app">
-    <meta property="twitter:description" content="SillyTavern 1.12.0 (codename the \"Neo Server\" update) includes several critical changes that may affect the way you use SillyTavern.">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/usage/quick-start/">
+    <meta property="twitter:title" content="Quick Start | docs.ST.app">
+    <meta property="twitter:description" content="I'm clueless. Just spoonfeed me the easiest and fastest way I can start using SillyTavern. -- Anonymous">
+    <meta property="twitter:image" content="https://docs.sillytavern.app/static/quick-start/1_name.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.782779011121" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.783160948194" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.782779011121" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783160948194" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.782779011121" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.782779011121" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783160948194" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -52,8 +53,23 @@
         body {
             font-family: Noto Sans;
         }
+
+        .callout {
+          padding: 1rem;
+          margin-bottom: 1rem;
+          border: 1px solid #d2d6dc;
+          border-radius: 0.375rem;
+          background-color: #f0f4f8;
+        }
+        .callout p {
+          margin-bottom: 0.5rem !important;
+        }
+        .callout p:last-child {
+          margin-bottom: 0 !important;
+        }
     </Style>
     <link href="https://sillytavern.app/webfonts/NotoSans/stylesheet.css" rel="stylesheet">
+
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -198,58 +214,17 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="sillytavern-1120-migration-guide" class="break-words">
+<doc-anchor-target id="quick-start" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sillytavern-1120-migration-guide">#</doc-anchor-trigger>
-        <span>SillyTavern 1.12.0 Migration Guide</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-start">#</doc-anchor-trigger>
+        <span>Quick Start</span>
     </h1>
 </doc-anchor-target>
-<p>SillyTavern 1.12.0 (codename the &quot;Neo Server&quot; update) includes several critical changes that may affect the way you use SillyTavern.</p>
-<p>This guide will prepare you for the update and provide some further guidance.</p>
-<doc-anchor-target id="data-storage-update">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#data-storage-update">#</doc-anchor-trigger>
-        <span>Data storage update</span>
-    </h2>
-</doc-anchor-target>
-<p>1.12.0 changes the way SillyTavern handles the user data.</p>
-<p>Previously, all of the persistent data was stored together with the frontend part in the <code v-pre>/public</code> directory, which created confusion and potential points of failure, as well as making containerization and system-wide app installation quite challenging.</p>
-<doc-anchor-target id="whats-changed">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#whats-changed">#</doc-anchor-trigger>
-        <span>What&#x27;s changed?</span>
-    </h3>
-</doc-anchor-target>
-<p>All persistent information from <code v-pre>/public</code> such as settings and chats (full list below) was moved into a separate directory with the configurable path, making it portable and independent from the web server itself. When needed for compatibility purposes, for example, for hosting extensions, full-size character cards, user image uploads, etc. a smart redirect has been set up to automatically host user files from the data directory.</p>
-<doc-anchor-target id="setting-a-data-root">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-a-data-root">#</doc-anchor-trigger>
-        <span>Setting a data root</span>
-    </h3>
-</doc-anchor-target>
-<p>You can provide either an absolute or a relative (to the ST repository directory) path to the data root either by <code v-pre>config.yaml</code> or by starting the server with the <code v-pre>--dataRoot</code> console argument.</p>
-<blockquote>
-<p>YAML example</p>
-</blockquote>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-yaml"><code v-pre class="language-yaml"># -- DATA CONFIGURATION --
-# Root directory for user data storage
-dataRoot: C:\Users\Harry\Documents\ST-Data</code></pre>
-</doc-codeblock></div>
-<blockquote>
-<p>Console example</p>
-</blockquote>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">node server.js --dataRoot=&quot;/Users/harry/ST-Data&quot;
-# OR
-npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
-</doc-codeblock></div>
-<p>The default data root path is <code v-pre>./data</code>, which means the <code v-pre>data</code> directory in SillyTavern&#x27;s repository.</p>
 <div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-gray-300 dark:bg-dark-250"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
         <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-gray-400 dark:text-dark-250" width="22" height="22" viewBox="0 0 24 24" role="presentation">
                 <g fill="currentColor"><g>
                     <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
                     <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
@@ -258,309 +233,96 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Note</h5>
-<p>The data root path should be either a <strong>full absolute</strong> or a <strong>full relative</strong> path. You <em>can&#x27;t</em> use path shortcuts like <code v-pre>~</code> or <code v-pre>%APP_DATA%</code>, as these are resolved by a shell, not the operating system.</p>
+<p>I&#x27;m clueless. Just spoonfeed me the easiest and fastest way I can start using SillyTavern. -- <em>Anonymous</em></p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="migration">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#migration">#</doc-anchor-trigger>
-        <span>Migration</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="important-before-we-begin">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#important-before-we-begin">#</doc-anchor-trigger>
-        <span><strong>IMPORTANT!</strong> Before we begin</span>
-    </h4>
-</doc-anchor-target>
-<ol>
-<li><strong>Only if you want to move dataRoot from the default location. Otherwise, skip this part.</strong> Set the data root <em>before</em> first running the server after pulling an update. Run <code v-pre>npm install</code> for the <code v-pre>config.yaml</code> to populate with a new value, or pass a console argument.</li>
-<li>All data will be migrated into a <code v-pre>default-user</code> account. See more on <doc-anchor-trigger to="#users">Users</doc-anchor-trigger> below.</li>
-</ol>
-<doc-anchor-target id="containerless-bare-metal-installs">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#containerless-bare-metal-installs">#</doc-anchor-trigger>
-        <span>Containerless (bare metal) installs</span>
-    </h4>
-</doc-anchor-target>
-<p>You don&#x27;t have to do anything! An automatic migration should handle everything for you when you start the ST server and it detects the old storage format (by checking the existence of the <code v-pre>/public/characters</code> directory).</p>
-<p>Upon moving any files, an automatic backup will be created in the <code v-pre>/backups/_migration/YYYY-MM-DD</code> (resolved to the current date) directory, but it is always a good practice to make a full manual backup before running the migration.</p>
-<doc-anchor-target id="containerized-docker-installs">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#containerized-docker-installs">#</doc-anchor-trigger>
-        <span>Containerized (Docker) installs</span>
-    </h4>
-</doc-anchor-target>
-<p>Migrating the data in Docker volumes is a bit trickier but pretty straightforward. While <code v-pre>docker-compose.yml</code> provided with the repo was updated to reflect the changes, you may need to adjust your custom workflows/deployments.</p>
-<p><strong>Step 1.</strong> Create a new volume, and mount it to the &quot;/home/node/app/data&quot; path within the container. Don&#x27;t remove the <code v-pre>config</code> volume.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-yaml"><code v-pre class="language-yaml">volumes:
-    - &quot;./config:/home/node/app/config&quot;
-    - &quot;./data:/home/node/app/data&quot;</code></pre>
-</doc-codeblock></div>
-<p><strong>Step 2.</strong> Move everything but the <code v-pre>config.yaml</code> file from the <code v-pre>config</code> volume into the <code v-pre>default-user</code> subdirectory of the <code v-pre>data</code> volume.</p>
-<p><strong>Step 3.</strong> Rebuild the container and start it up.</p>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
-                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>Note</h5>
-<p>Soft links between the <code v-pre>/public</code> directory and the <code v-pre>config</code> volume are no longer needed and are not built into the Docker container!</p>
-        </div>
-    </div>
-</div>
-<doc-anchor-target id="what-to-migrate">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-to-migrate">#</doc-anchor-trigger>
-        <span>What to migrate?</span>
-    </h4>
-</doc-anchor-target>
-<p>The following files and directories are subject to the data migration. Assuming the default configuration, the before and after paths are provided in the table below.</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>Before</th>
-<th>After</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>/secrets.json</td>
-<td>/data/default-user/secrets.json</td>
-</tr>
-<tr>
-<td>/thumbnails</td>
-<td>/data/default-user/thumbnails</td>
-</tr>
-<tr>
-<td>/vectors</td>
-<td>/data/default-user/vectors</td>
-</tr>
-<tr>
-<td>/public/settings.json</td>
-<td>/data/default-user/settings.json</td>
-</tr>
-<tr>
-<td>/public/stats.json</td>
-<td>/data/default-user/stats.json</td>
-</tr>
-<tr>
-<td>/public/assets</td>
-<td>/data/default-user/assets</td>
-</tr>
-<tr>
-<td>/public/backgrounds</td>
-<td>/data/default-user/backgrounds</td>
-</tr>
-<tr>
-<td>/public/characters</td>
-<td>/data/default-user/characters</td>
-</tr>
-<tr>
-<td>/public/chats</td>
-<td>/data/default-user/chats</td>
-</tr>
-<tr>
-<td>/public/context</td>
-<td>/data/default-user/context</td>
-</tr>
-<tr>
-<td>/public/scripts/extensions/third-party</td>
-<td>/data/default-user/extensions</td>
-</tr>
-<tr>
-<td>/public/group chats</td>
-<td>/data/default-user/group chats</td>
-</tr>
-<tr>
-<td>/public/groups</td>
-<td>/data/default-user/groups</td>
-</tr>
-<tr>
-<td>/public/instruct</td>
-<td>/data/default-user/instruct</td>
-</tr>
-<tr>
-<td>/public/KoboldAI Settings</td>
-<td>/data/default-user/KoboldAI Settings</td>
-</tr>
-<tr>
-<td>/public/movingUI</td>
-<td>/data/default-user/movingUI</td>
-</tr>
-<tr>
-<td>/public/NovelAI Settings</td>
-<td>/data/default-user/NovelAI Settings</td>
-</tr>
-<tr>
-<td>/public/OpenAI Settings</td>
-<td>/data/default-user/OpenAI Settings</td>
-</tr>
-<tr>
-<td>/public/QuickReplies</td>
-<td>/data/default-user/QuickReplies</td>
-</tr>
-<tr>
-<td>/public/TextGen Settings</td>
-<td>/data/default-user/TextGen Settings</td>
-</tr>
-<tr>
-<td>/public/themes</td>
-<td>/data/default-user/themes</td>
-</tr>
-<tr>
-<td>/public/worlds</td>
-<td>/data/default-user/worlds</td>
-</tr>
-<tr>
-<td>/default/content/content.log</td>
-<td>/data/default-user/content.log</td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="users">
+<p>You can get started with SillyTavern in just a few minutes. Here are two easy ways to get started:</p>
+<ul>
+<li><p>You can <doc-anchor-trigger to="#quick-start-with-ai-horde">use AI Horde</doc-anchor-trigger> for free. AI Horde is a community-driven AI service that provides access to a variety of AI models.</p>
+</li>
+<li><p>If you have an OpenAI account or want to register one, you can <doc-anchor-trigger to="#quick-start-with-openai">use OpenAI</doc-anchor-trigger>.</p>
+</li>
+</ul>
+<doc-anchor-target id="quick-start-with-ai-horde">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#users">#</doc-anchor-trigger>
-        <span>Users</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-start-with-ai-horde">#</doc-anchor-trigger>
+        <span>Quick start with AI Horde</span>
     </h2>
 </doc-anchor-target>
-<p>1.12.0 adds a (completely optional) ability to create a multi-user setup on the same server, allowing multiple users to use their own fully isolated SillyTavern instances even at the same time. User accounts can also be password-protected for an additional layer of privacy.</p>
-<blockquote>
-<p>While we tried to apply most of the well-known security practices, this still doesn&#x27;t make the SillyTavern server secure enough to expose it to the public internet.</p>
-</blockquote>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-red-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-red-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M21.71 6.15L15.85.29c-.19-.18-.44-.29-.71-.29H6.86c-.27 0-.52.11-.71.29L.29 6.15c-.18.19-.29.44-.29.71v8.28c0 .27.11.52.29.71l5.86 5.86c.19.18.44.29.71.29h8.28c.27 0 .52-.11.71-.29l5.86-5.86a.99.99 0 00.29-.71V6.86c0-.27-.11-.52-.29-.71zM20 14.73L14.73 20H7.27L2 14.73V7.27L7.27 2h7.45L20 7.27v7.46z"></path>
-                    <path d="M11 12c.55 0 1-.45 1-1V7c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .55.45 1 1 1zM11.01 14c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-            <h5>Disclaimer</h5>
-<p><strong>NEVER HOST ANY INSTANCES TO THE OPEN INTERNET WITHOUT ENSURING PROPER SECURITY MEASURES FIRST.</strong></p>
-<p><strong>WE ARE NOT RESPONSIBLE FOR ANY DAMAGE OR LOSSES IN CASES OF UNAUTHORIZED ACCESS DUE TO IMPROPER OR INADEQUATE SECURITY IMPLEMENTATION.</strong></p>
-        </div>
-    </div>
-</div>
-<doc-anchor-target id="configuration">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#configuration">#</doc-anchor-trigger>
-        <span>Configuration</span>
-    </h3>
-</doc-anchor-target>
-<p>To enable and use the multi-user mode, edit the <code v-pre>config.yaml</code> file:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-yaml"><code v-pre class="language-yaml"># Enable multi-user mode
-enableUserAccounts: true
-# Enable discreet login mode: hides user list on the login screen
-enableDiscreetLogin: true</code></pre>
-</doc-codeblock></div>
 <ol>
-<li>When the user account setting is disabled, a <code v-pre>default-user</code> fallback admin account is utilized for storing the user data.</li>
-<li>When the discreet login setting is disabled, a list of active users is displayed on the login screen. If enabled, a user must enter their handle manually.</li>
+<li><p>Follow the <a href="../../installation/">Installation Guide</a> to install and start SillyTavern.</p>
+</li>
+<li><p>In SillyTavern&#x27;s onboarding screen, enter a name for your persona. This name will be used in the chat.</p>
+<p><img src="../../static/quick-start/1_name.png" alt="This is an optional caption" /></p>
+</li>
+<li><p>Click the API Connections button in the top bar.</p>
+<p><img src="../../static/quick-start/2_api_conn.png" alt="This is an optional caption" /></p>
+</li>
+<li><p>Enter an API key for AI Horde. You can use <code v-pre>0000000000</code> for now, or get a free key from <a href="https://aihorde.net/">AI Horde</a>.</p>
+<p><img src="../../static/quick-start/3_horde_key.png" alt="This is an optional caption" /></p>
+</li>
+<li><p>Select some AI models to use. Just choose a few from the top. You can always change them later.</p>
+<p><img src="../../static/quick-start/4_horde_models.png" alt="This is an optional caption" /></p>
+</li>
+<li><p>Close the API Connections window. Enter a message in the chat box at the bottom and press Enter.</p>
+<p><img src="../../static/quick-start/5_msg.png" alt="This is an optional caption" /></p>
+</li>
+<li><p>Your AI will respond in a few moments. You can continue chatting with it. Success!</p>
+<p><img src="../../static/quick-start/6_success.png" alt="This is an optional caption" /></p>
+</li>
 </ol>
-<blockquote>
-<p>You can&#x27;t <em>delete</em> the <code v-pre>default-user</code> account from the users list because it is used for serving the user data in case if <code v-pre>enableUserAccounts</code> is set to <code v-pre>false</code>. But you can <em>disable</em> it to hide it from the list and disallow logins.</p>
-</blockquote>
-<doc-anchor-target id="user-handles">
+<doc-anchor-target id="quick-start-with-openai">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#quick-start-with-openai">#</doc-anchor-trigger>
+        <span>Quick start with OpenAI</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="install-sillytavern">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#user-handles">#</doc-anchor-trigger>
-        <span>User handles</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#install-sillytavern">#</doc-anchor-trigger>
+        <span>Install SillyTavern</span>
     </h3>
 </doc-anchor-target>
-<p>A handle is the unique identifier of a user. It can consist only of lowercase letters, numbers, and dashes.</p>
-<p>A path to the user data directory assumes using the following pattern: <code v-pre>%DATA_ROOT%/%USER_HANDLE%</code>.</p>
-<p>Examples of valid user handles:</p>
-<ul>
-<li>default-user</li>
-<li>juan555</li>
-<li>flux-the-cat</li>
-<li>cool-guy1337</li>
-</ul>
-<doc-anchor-target id="user-roles">
+<p>Follow the <a href="../../installation/">Installation Guide</a> to install and start SillyTavern.</p>
+<doc-anchor-target id="get-access-to-openai">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#user-roles">#</doc-anchor-trigger>
-        <span>User roles</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>Admin</strong> - can manage (create, delete, modify) other users.</li>
-<li><strong>User</strong> - can&#x27;t manage other users.</li>
-</ul>
-<p>Except for having admin panel access, both user roles are functionally identical and can use a full range of SillyTavern features without any restrictions. An implementation of user permissions is TBD.</p>
-<p>All user accounts are created as regular users first, and then could be promoted to admins if needed.</p>
-<doc-anchor-target id="login-screen">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#login-screen">#</doc-anchor-trigger>
-        <span>Login screen</span>
-    </h3>
-</doc-anchor-target>
-<p>There you can select a user account to use. Has two styles, depending on the <code v-pre>enableDiscreetLogin</code> config value.</p>
-<p>The login screen is bypassed and not displayed when you have only one active user and it is not password protected.</p>
-<doc-anchor-target id="user-profile">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#user-profile">#</doc-anchor-trigger>
-        <span>User profile</span>
-    </h3>
-</doc-anchor-target>
-<p>You can access an account self-management menu using an &quot;Account&quot; button under the &quot;User settings&quot; panel in the top menu bar.</p>
-<ol>
-<li>Display name - used in the login screen, can be changed. Does not correlate with personas and is not visible for the AI APIs - you can still use as many personas as you want.</li>
-<li>Profile picture - used in the login screen. You can either use a custom picture, the default persona picture (if set), or the last used persona otherwise.</li>
-<li>Password - a lock icon reflects the account protection status (open lock = no password). A password can be set, changed, or removed using the &quot;Change Password&quot; button.</li>
-<li>Settings Snapshots - access and review the backups of your <code v-pre>settings.json</code> file, with the ability to create or restore snapshots.</li>
-<li>Download Backup - download an archive of your user data folder.</li>
-<li>Reset Settings - reset factory default settings, while leaving other data (character, chats) intact.</li>
-</ol>
-<doc-anchor-target id="password-recovery">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#password-recovery">#</doc-anchor-trigger>
-        <span>Password recovery</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#get-access-to-openai">#</doc-anchor-trigger>
+        <span>Get access to OpenAI</span>
     </h3>
 </doc-anchor-target>
 <ol>
-<li>A password can be recovered from a login screen. You need access to the server console to get a one-time recovery code (consisting of 4 digits).</li>
-<li>Alternatively, you can use a utility script in the SillyTavern server to reset a password by providing the user handle.</li>
+<li>Sign up to OpenAI.</li>
+<li>Go to <a href="https://platform.openai.com">https://platform.openai.com</a></li>
+<li>Click your account icon in the top right, then View API Keys.</li>
+<li>Click &quot;Create new secret key&quot;. Copy it somewhere immediately. <strong>DO NOT SHARE THIS KEY. WHOEVER HAS IT CAN USE YOUR ACCOUNT TO USE GPT AT YOUR EXPENSE.</strong></li>
 </ol>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Usage: node recover.js [account] (password)
-Example: node recover.js admin SecurePassword</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="security-checklist">
+<doc-anchor-target id="configure-sillytavern-to-use-your-api">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#security-checklist">#</doc-anchor-trigger>
-        <span>Security checklist</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#configure-sillytavern-to-use-your-api">#</doc-anchor-trigger>
+        <span>Configure SillyTavern to use your API</span>
     </h3>
 </doc-anchor-target>
-<p><strong>This is just a recommendation. Please consult a web application security specialist before making your ST instance live.</strong></p>
 <ol>
-<li>Keep your operating system and runtime software like Node.js updated. This will ensure that your system is up-to-date with the latest security patches and fixes which can help prevent potential vulnerabilities.</li>
-<li>Use a whitelist and a network firewall. Only allow trusted IP ranges to access the server.</li>
-<li>Enable basic authentication. It acts as a &quot;master password&quot; before you can proceed to the front-end app.</li>
-<li>Alternatively, configure external authentication. Some known services for that are <a href="https://www.authelia.com/">Authelia</a> and <a href="https://goauthentik.io/">authentik</a>.</li>
-<li>Never leave admin accounts passwordless. A server will warn you upon the startup if you have any unprotected admin accounts.</li>
-<li>Use the discreet login setting outside of the local network. This will hide the user list from any potential outsiders.</li>
-<li>Check the access logs often. They are written to the server console and the <code v-pre>access.log</code> file and provide information on incoming connections, such as IP address and user agent.</li>
-<li>Configure HTTPS. For a localhost server, you can generate and use a self-signed certificate. Otherwise, you may need to deploy a proxying web server like <a href="https://traefik.io/">Traefik</a> or <a href="https://caddyserver.com/docs/getting-started">Caddy</a>.</li>
+<li>In SillyTavern&#x27;s top bar, click API Connections.</li>
+<li>Under API, select Chat Completion (OpenAI).</li>
+<li>Under Chat Completion Source, select OpenAI.</li>
+<li>Paste the API key you saved in the previous step.</li>
+<li>Click the Connect button. Confirm it says Valid.</li>
+<li>By default, SillyTavern will use GPT-4 Turbo. You can choose a different model, but educate yourself on the pricing.</li>
 </ol>
-<p>Find more on secure proxying in the following guide: <a href="https://docs.sillytavern.app/usage/st-reverse-proxy-guide/">Reverse Proxying SillyTavern</a></p>
+<doc-anchor-target id="test-your-setup">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#test-your-setup">#</doc-anchor-trigger>
+        <span>Test your setup</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li>In SillyTavern&#x27;s top bar, click Character Management at the far right.</li>
+<li>Select an existing character such as Seraphina.</li>
+<li>In the text box at the bottom, write something to Seraphina, then press Enter or click the Send button.</li>
+</ol>
+<p>If you did everything right, after a few seconds, Seraphina should respond.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -568,7 +330,7 @@ Example: node recover.js admin SecurePassword</code></pre>
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/Installation/ST-1.12.0-Migration-Guide.md" target="_blank" rel="noopener">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/Usage/quick-start.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
@@ -576,11 +338,11 @@ Example: node recover.js admin SecurePassword</code></pre>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../installation/docker/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../installation/updating/migration-guide-1-09/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Docker</span>
+                                                <span class="block mt-1">1.​9.​0 Migration Guide</span>
                                             </span>
                                         </a>
                                     </div>
@@ -633,6 +395,6 @@ Example: node recover.js admin SecurePassword</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "SillyTavern 1.12.0 Migration Guide", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Quick Start", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
