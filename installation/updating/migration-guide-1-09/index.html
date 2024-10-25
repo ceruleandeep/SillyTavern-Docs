@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783168056419">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783178916074">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.783168056419" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.783178916074" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783168056419" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783178916074" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783168056419" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783178916074" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -225,7 +225,7 @@
 </doc-anchor-target>
 <p><em><strong>It is recommended to do a fresh install.</strong></em> However, if you wish to use an existing copy of SillyTavern, please follow the instructions below.</p>
 <p><strong>IMPORTANT!</strong> Before doing anything, make <em>a complete backup</em> of your installation. You may <em>lose your data</em> in the process, so don&#x27;t ignore this warning.</p>
-<p>Not sure of which files to back up? See the list here: <a href="https://docs.sillytavern.app/usage/update/#note-do-not-copy-the-entire-public-folder">How to Update SillyTavern</a></p>
+<p>Not sure of which files to back up? See the list here: <a href="../#updating-from-1120-to-1120">How to Update SillyTavern</a></p>
 <doc-anchor-target id="git-installs">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#git-installs">#</doc-anchor-trigger>
@@ -233,20 +233,26 @@
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Open a terminal prompt (cmd, PowerShell, Termux, etc) in your SillyTavern installation folder.</li>
-<li>Type <code v-pre>git fetch</code> and then <code v-pre>git pull</code> to pull the updates.</li>
-<li>You may lose your settings. Have you made a backup? <code v-pre>git switch release</code> or <code v-pre>git switch staging</code> will change your branch, respectively</li>
-<li>Skip to next item if you have no errors. You may have something like:
+<li><p>Open a terminal prompt (cmd, PowerShell, Termux, etc) in your SillyTavern installation folder.</p>
+</li>
+<li><p>Type <code v-pre>git fetch</code> and then <code v-pre>git pull</code> to pull the updates.</p>
+</li>
+<li><p>You may lose your settings. Have you made a backup? <code v-pre>git switch release</code> or <code v-pre>git switch staging</code> will change your branch, respectively</p>
+</li>
+<li><p>Skip to next item if you have no errors. You may have something like:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">error: Your local changes to the following files would be overwritten by checkout:
      config.conf
      public/css/bg_load.css
      public/settings.json</code></pre>
 </doc-codeblock></div>
-You will see a list of files effected. If you do not care about those settings files being replaced <code v-pre>git switch -f release</code> or <code v-pre>git switch -f staging</code> will set your branch.
-If you do care to save those changes restore from backup.</li>
-<li>Type <code v-pre>npm install</code> and then <code v-pre>npm run start</code> to test that everything behaves correctly.</li>
-<li>Enjoy! Restore your data from a backup if needed.</li>
+<p>You will see a list of files affected. If you do not care about those settings files being replaced <code v-pre>git switch -f release</code> or <code v-pre>git switch -f staging</code> will set your branch.
+If you do care to save those changes restore from backup.</p>
+</li>
+<li><p>Type <code v-pre>npm install</code> and then <code v-pre>npm run start</code> to test that everything behaves correctly.</p>
+</li>
+<li><p>Enjoy! Restore your data from a backup if needed.</p>
+</li>
 </ol>
 <doc-anchor-target id="fatal-invalid-reference-release">
     <h3>
@@ -256,7 +262,7 @@ If you do care to save those changes restore from backup.</li>
 </doc-anchor-target>
 <p>This may happen if you cloned just a single branch from an old remote (before migration to the organization repo). To fix this, you need to add and fetch a branch from a new remote:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">git remote add st http://github.com/SillyTavern/SillyTavern
+<pre class="language-none"><code v-pre class="language-none">git remote add st https://github.com/SillyTavern/SillyTavern
 git fetch st
 git checkout -t st/release</code></pre>
 </doc-codeblock></div>

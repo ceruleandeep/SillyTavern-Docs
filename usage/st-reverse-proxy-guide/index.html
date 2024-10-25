@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783168056419">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783178916074">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.783168056419" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.783178916074" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783168056419" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783178916074" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783168056419" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.783168056419" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783178916074" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.783178916074" defer></script>
 
     <Style>
         a {
@@ -619,8 +619,6 @@ basicAuthMode: true</code></pre>
         </div>
     </div>
 </div>
-</li>
-</ol>
 <p>Or to use the SillyTavern accounts as usernames and passwords:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-yaml"><code v-pre class="language-yaml">basicAuthMode: true
@@ -644,8 +642,8 @@ perUserBasicAuth: true</code></pre>
         </div>
     </div>
 </div>
-<ol start="22">
-<li>Wait a few minutes, then open your domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.
+</li>
+<li><p>Wait a few minutes, then open your domain page you made for ST. At the end of it, you should be able to open SillyTavern from anywhere you go just with one URL and one account.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -660,12 +658,13 @@ perUserBasicAuth: true</code></pre>
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>Tip</h5>
-If nothing happens after several minutes, check the container logs for Traefik for any possible errors.
+<p>If nothing happens after several minutes, check the container logs for Traefik for any possible errors.</p>
         </div>
     </div>
 </div>
 </li>
-<li>Enjoy! :D</li>
+<li><p>Enjoy! :D</p>
+</li>
 </ol>
 <doc-anchor-target id="linux-docker-sillytavern">
     <h3>
@@ -795,7 +794,7 @@ services:
         secrets:
             - CF_DNS_API_KEY
         ports:
-            - 80:80
+            - &quot;80:80&quot;
             - 443:443
             - 8080:8080
         environment:

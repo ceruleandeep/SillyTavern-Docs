@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783168056419">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783178916074">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,12 +33,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.783168056419" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.783178916074" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783168056419" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783178916074" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783168056419" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.783168056419" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783178916074" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.783178916074" defer></script>
 
     <Style>
         a {
@@ -344,8 +344,6 @@
     - 172.18.0.1</code></pre>
 </doc-codeblock></div>
 <p>Save the file by pressing <em>Ctrl+S</em> then exit <code v-pre>nano</code> by pressing <em>Ctrl+X</em>.</p>
-</li>
-</ol>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -363,7 +361,7 @@
         </div>
     </div>
 </div>
-<ol start="9">
+</li>
 <li><p>Restart the Docker Container to apply the new configuration.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
@@ -457,8 +455,6 @@
     - 172.18.0.1</code></pre>
 </doc-codeblock></div>
 <p>Save the file by pressing <em>Ctrl+S</em> then exit your editor.</p>
-</li>
-</ol>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -476,7 +472,7 @@
         </div>
     </div>
 </div>
-<ol start="7">
+</li>
 <li><p>Restart the Docker Container to apply the new configuration.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
@@ -593,8 +589,6 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
     - 172.18.0.1</code></pre>
 </doc-codeblock></div>
 <p>Save the file by pressing <em>Ctrl+S</em> then exit <code v-pre>nano</code> by pressing <em>Ctrl+X</em>.</p>
-</li>
-</ol>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -612,7 +606,7 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
         </div>
     </div>
 </div>
-<ol start="7">
+</li>
 <li><p>Restart the Docker Container to apply the new configuration.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
@@ -682,30 +676,30 @@ You will also need to install <a href="https://brew.sh/">Homebrew</a> in order t
     </div>
 </div>
 <ol>
-<li>Using <code v-pre>nano</code> or a code editor, open <em>docker-compose.yml</em> and add the following line below <code v-pre>volumes</code>.</li>
-</ol>
+<li><p>Using <code v-pre>nano</code> or a code editor, open <em>docker-compose.yml</em> and add the following line below <code v-pre>volumes</code>.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">    volumes:
         - &quot;./config:/home/node/app/config&quot;
         - &quot;./data:/home/node/app/data&quot;
         - &quot;./plugins:/home/node/app/plugins&quot;</code></pre>
 </doc-codeblock></div>
-<ol start="2">
-<li>Create a new folder within the <code v-pre>docker</code> folder called <em>plugins</em>.</li>
-<li>Follow your plugin&#x27;s instructions on installing the plugin.</li>
-<li>Using <code v-pre>nano</code> or a code editor with administrator rights, open <em>config.yaml</em> (within the <code v-pre>config</code> folder) and enable <code v-pre>enableServerPlugins</code></li>
-</ol>
+</li>
+<li><p>Create a new folder within the <code v-pre>docker</code> folder called <em>plugins</em>.</p>
+</li>
+<li><p>Follow your plugin&#x27;s instructions on installing the plugin.</p>
+</li>
+<li><p>Using <code v-pre>nano</code> or a code editor with administrator rights, open <em>config.yaml</em> (within the <code v-pre>config</code> folder) and enable <code v-pre>enableServerPlugins</code></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">enableServerPlugins: true</code></pre>
 </doc-codeblock></div>
-<ol start="5">
-<li>Restart the Docker container.</li>
-</ol>
+</li>
+<li><p>Restart the Docker container.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">docker compose restart sillytavern</code></pre>
 </doc-codeblock></div>
-<ol start="6">
-<li>Profit.</li>
+</li>
+<li><p>Profit.</p>
+</li>
 </ol>
 
                                 

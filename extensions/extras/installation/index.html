@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783168056419">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783178916074">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,11 +33,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.783168056419" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.783178916074" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783168056419" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783178916074" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783168056419" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783178916074" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -247,7 +247,7 @@
 <li>Simple to setup</li>
 <li>Free to use</li>
 <li>No Colab GPU credits required (use the <code v-pre>use_cpu</code> options)</li>
-<li>See the <a href="https://docs.sillytavern.app/extras/running-extras-in-colab/">Colab Guide Page</a> for details.</li>
+<li>See the <a href="../running-extras-in-colab/">Colab Guide Page</a> for details.</li>
 </ul>
 <hr>
 <doc-anchor-target id="installation-methods">
@@ -264,46 +264,39 @@
 </doc-anchor-target>
 <p>This method is recommended because Conda makes a &#x27;virtual environment&#x27; for the Extras requirement packages to live inside, so they do not affect your system-wide Python setup.</p>
 <ol>
-<li>Install <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></li>
-</ol>
+<li><p>Install <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a></p>
 <p><em>(Important!) Read <a href="https://conda.io/projects/conda/en/latest/user-guide/getting-started.html">how to use Conda</a></em></p>
-<ol start="2">
-<li>Install <a href="https://git-scm.com/downloads">git</a></li>
-</ol>
+</li>
+<li><p>Install <a href="https://git-scm.com/downloads">git</a></p>
 <p><em>(Chads who installed SillyTavern with git to begin with can skip this step!)</em></p>
 <p>After you have both of them installed...</p>
 <p>Type/paste the commands below <code v-pre>ONE BY ONE</code> IN THE <code v-pre>CONDA COMMAND PROMPT WINDOW</code> and hit <code v-pre>Enter</code> after each one.</p>
-<ol start="3">
-<li>Create a new Conda environment (let&#x27;s call it <code v-pre>extras</code>):</li>
-</ol>
+</li>
+<li><p>Create a new Conda environment (let&#x27;s call it <code v-pre>extras</code>):</p>
 <p><code v-pre>conda create -n extras</code></p>
-<ol start="4">
-<li>Activate the new environment</li>
-</ol>
+</li>
+<li><p>Activate the new environment</p>
 <p><code v-pre>conda activate extras</code> (you should see <code v-pre>(extras)</code> pop up on the left side of your command prompt)</p>
-<ol start="5">
-<li>Install the required system packages (this will take some time)</li>
-</ol>
+</li>
+<li><p>Install the required system packages (this will take some time)</p>
 <p><code v-pre>conda install python=3.11 git</code></p>
-<ol start="6">
-<li>Clone the Extras GitHub repo</li>
-</ol>
+</li>
+<li><p>Clone the Extras GitHub repo</p>
 <p><code v-pre>git clone https://github.com/SillyTavern/SillyTavern-extras</code></p>
-<ol start="7">
-<li>Navigate to your cloned Extras repo</li>
-</ol>
+</li>
+<li><p>Navigate to your cloned Extras repo</p>
 <p><code v-pre>cd SillyTavern-extras</code></p>
-<ol start="8">
-<li>Install Extras&#x27; requirements by using <strong>one</strong> of the following commands (will take time, again):</li>
-</ol>
+</li>
+<li><p>Install Extras&#x27; requirements by using <strong>one</strong> of the following commands (will take time, again):</p>
 <ul>
 <li><code v-pre>pip install -r requirements.txt</code> - for basic features</li>
 <li><code v-pre>pip install -r requirements-rvc.txt</code> - for real-time voice cloning</li>
 <li><code v-pre>pip install -r requirements-coqui.txt</code> - for Coqui TTS (not recommended)</li>
 </ul>
-<p>See the <a href="https://docs.sillytavern.app/extras/installation/common-problems/">Common Problems</a> page if you get errors at this step!</p>
-<ol start="9">
-<li>See below &#x27;Running Extras After Install&#x27;</li>
+<p>See the <a href="common-problems/">Common Problems</a> page if you get errors at this step!</p>
+</li>
+<li><p>See below &#x27;Running Extras After Install&#x27;</p>
+</li>
 </ol>
 <hr>
 <doc-anchor-target id="system-wide-installation">
@@ -449,13 +442,17 @@
 </doc-anchor-target>
 <p>This is Optional and only applies to Windows, but something similar should be possible on MacOS.</p>
 <ol>
-<li>View your Windows Desktop</li>
-<li>Right-click, select <code v-pre>New</code>, and then click <code v-pre>Text Document</code></li>
-<li>A new file will appear on your Desktop, asking for a name.</li>
-<li>Name the file <code v-pre>STExtras.txt</code></li>
-<li>Open the newly created file in a text editor.</li>
-<li>Paste the following code into it:</li>
-</ol>
+<li><p>View your Windows Desktop</p>
+</li>
+<li><p>Right-click, select <code v-pre>New</code>, and then click <code v-pre>Text Document</code></p>
+</li>
+<li><p>A new file will appear on your Desktop, asking for a name.</p>
+</li>
+<li><p>Name the file <code v-pre>STExtras.txt</code></p>
+</li>
+<li><p>Open the newly created file in a text editor.</p>
+</li>
+<li><p>Paste the following code into it:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-none"><code v-pre class="language-none">cd C:\_your_\_full_\_Extras_\_folder_\_path_\
 call conda activate extras
@@ -463,10 +460,13 @@ python server.py --enable-modules=YOUR,SELECTED,MODULE,LIST,HERE,WITH,NO,SPACES
 call conda deactivate
 pause</code></pre>
 </doc-codeblock></div>
-<ol start="6">
-<li>Replace the placeholder folder path with your actual Extras install folder path.</li>
-<li>Replace the python command line with your actual command line</li>
-<li>Save the file with a new name <code v-pre>STExtras.bat</code> (Use <code v-pre>File</code> &gt;&gt; <code v-pre>Save As</code> in most text editors)</li>
+</li>
+<li><p>Replace the placeholder folder path with your actual Extras install folder path.</p>
+</li>
+<li><p>Replace the python command line with your actual command line</p>
+</li>
+<li><p>Save the file with a new name <code v-pre>STExtras.bat</code> (Use <code v-pre>File</code> &gt;&gt; <code v-pre>Save As</code> in most text editors)</p>
+</li>
 </ol>
 <p>You can now simply double-click on this .bat file to easily start Extras.</p>
 <p>If you ever want to change the module list (or any other command line modifiers for the extras server), simply edit the python command inside the .bat file.</p>
