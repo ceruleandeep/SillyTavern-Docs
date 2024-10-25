@@ -6,40 +6,40 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783162070616">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783162365256">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>KoboldCpp | docs.ST.app</title>
-    <meta name="title" content="KoboldCpp | docs.ST.app">
-    <meta name="description" content="KoboldCpp is a self-contained API for GGML and GGUF models.">
+    <title>KoboldAI Horde | docs.ST.app</title>
+    <meta name="title" content="KoboldAI Horde | docs.ST.app">
+    <meta name="description" content="KoboldAI Horde is a crowdsourced, distributed GPU cluster run entirely by volunteers.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://docs.sillytavern.app/usage/api_connections/koboldcpp/">
+    <link rel="canonical" href="https://docs.sillytavern.app/usage/api-connections/horde/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://docs.sillytavern.app/usage/api_connections/koboldcpp/">
-    <meta property="og:title" content="KoboldCpp | docs.ST.app">
-    <meta property="og:description" content="KoboldCpp is a self-contained API for GGML and GGUF models.">
-    <meta property="og:image" content="https://docs.sillytavern.app/static/koboldcpp.png">
+    <meta property="og:url" content="https://docs.sillytavern.app/usage/api-connections/horde/">
+    <meta property="og:title" content="KoboldAI Horde | docs.ST.app">
+    <meta property="og:description" content="KoboldAI Horde is a crowdsourced, distributed GPU cluster run entirely by volunteers.">
+    <meta property="og:image" content="https://docs.sillytavern.app/static/horde-worker.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://docs.sillytavern.app/usage/api_connections/koboldcpp/">
-    <meta property="twitter:title" content="KoboldCpp | docs.ST.app">
-    <meta property="twitter:description" content="KoboldCpp is a self-contained API for GGML and GGUF models.">
-    <meta property="twitter:image" content="https://docs.sillytavern.app/static/koboldcpp.png">
+    <meta property="twitter:url" content="https://docs.sillytavern.app/usage/api-connections/horde/">
+    <meta property="twitter:title" content="KoboldAI Horde | docs.ST.app">
+    <meta property="twitter:description" content="KoboldAI Horde is a crowdsourced, distributed GPU cluster run entirely by volunteers.">
+    <meta property="twitter:image" content="https://docs.sillytavern.app/static/horde-worker.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.783162070616" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.783162365256" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783162070616" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783162365256" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783162070616" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783162365256" data-turbo-eval="false" defer></script>
 
     <Style>
         a {
@@ -51,7 +51,7 @@
         }
 
         body {
-            font-family: Noto Sans;
+            font-family: Noto Sans, sans-serif;
         }
 
         .callout {
@@ -59,7 +59,6 @@
           margin-bottom: 1rem;
           border: 1px solid #d2d6dc;
           border-radius: 0.375rem;
-          background-color: #f0f4f8;
         }
         .callout p {
           margin-bottom: 0.5rem !important;
@@ -214,90 +213,112 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="koboldcpp" class="break-words">
+<doc-anchor-target id="koboldai-horde" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#koboldcpp">#</doc-anchor-trigger>
-        <span>KoboldCpp</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#koboldai-horde">#</doc-anchor-trigger>
+        <span>KoboldAI Horde</span>
     </h1>
 </doc-anchor-target>
-<p>KoboldCpp is a self-contained API for GGML and GGUF models.</p>
-<p>This <a href="https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator">VRAM Calculator</a> by Nyx will tell you approximately how much RAM/VRAM your model requires.</p>
-<doc-anchor-target id="nvidia-gpu-quickstart">
+<doc-anchor-target id="disclaimer">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nvidia-gpu-quickstart">#</doc-anchor-trigger>
-        <span>Nvidia GPU Quickstart</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#disclaimer">#</doc-anchor-trigger>
+        <span>Disclaimer</span>
     </h2>
 </doc-anchor-target>
-<p>This guide assumes you&#x27;re using Windows.</p>
 <ul>
-<li>Download the latest release: <a href="https://github.com/LostRuins/koboldcpp/releases">https://github.com/LostRuins/koboldcpp/releases</a></li>
-<li>Launch KoboldCpp. You may see a pop-up from Microsoft Defender, click <code v-pre>Run Anyway</code>.</li>
-<li>As of version 1.58, KoboldCpp should look like this:</li>
+<li>KoboldAI Horde is a crowdsourced, distributed GPU cluster run entirely by volunteers.</li>
+<li>By default, your inputs are anonymously sent and responses can not be seen by the person running the Horde Worker.</li>
+<li>However, since it is an open-sourced program, Malicious Workers could modify the code to:
+<ul>
+<li>log your activity (input prompts, AI responses).</li>
+<li>produce bad or offensive responses.</li>
+</ul>
+</li>
+</ul>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>When using Horde <strong>never send</strong> any personal information such as names, email addresses, etc.</p>
+        </div>
+    </div>
+</div>
+<p>Switching on the &quot;Trusted Workers Only&quot; checkbox will limit the selection of available workers to only those who have been hosting on Horde for a while and are generally considered trusted. But they could still be seeing prompts, for example by hosting using unaccounted software.</p>
+<p>To help reduce this problem, SillyTavern has built in the following feature:</p>
+<ul>
+<li>When a chat response is generated by a Horde Worker, SillyTavern records the Worker&#x27;s ID and what model they were using.</li>
+<li>This information can be seen by hovering your mouse cursor over the chat item (see image below).</li>
+<li>If you believe you received a malicious response, you can pass this information to the Horde admin on the <a href="https://koboldai.org/discord">Kobold Discord</a> for review and possible disciplinary action against that Worker.</li>
 </ul>
 <p><figure class="content-center">
-    <img src="../../../static/koboldcpp.png" alt="KoboldCpp 1.58">
-    <figcaption class="caption">KoboldCpp 1.58</figcaption>
+    <img src="../../../static/horde-worker.png" alt="Horde Worker Info Popup">
+    <figcaption class="caption">Horde Worker Info Popup</figcaption>
 </figure>
 </p>
-<ul>
-<li>Under the <code v-pre>Quick Launch</code> tab, select the model and your preferred <code v-pre>Context Size</code>.</li>
-<li>Select <code v-pre>Use CuBLAS</code> and make sure the yellow text next to <code v-pre>GPU ID</code> matches your GPU.</li>
-<li>Do not tick <code v-pre>Low VRAM</code>, even if you have low VRAM.</li>
-<li>Unless you have an Nvidia 10-series or older GPU, untick <code v-pre>Use QuantMatMul (mmq)</code>.</li>
-<li><code v-pre>GPU Layers</code> should have been populated when you loaded your model. Leave it there for now.</li>
-<li>Under the <code v-pre>Hardware</code> tab, tick <code v-pre>High Priority</code>.</li>
-<li>Click <code v-pre>Save</code> so you don&#x27;t have to configure KoboldCpp on every launch.</li>
-<li>Click <code v-pre>Launch</code> and wait for the model to load.</li>
-</ul>
-<p>You should see something like this:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Load Model OK: True
-Embedded Kobold Lite loaded.
-Starting Kobold API on port 5001 at http://localhost:5001/api/
-Starting OpenAI Compatible API on port 5001 at http://localhost:5001/v1/
-======
-Please connect to custom endpoint at http://localhost:5001</code></pre>
-</doc-codeblock></div>
-<p>You can now connect to KoboldCpp within SillyTavern with <code v-pre>http://localhost:5001</code> as the API URL and start chatting.</p>
-<p><strong>Congratulations! You&#x27;re done!</strong></p>
-<p>Kind of.</p>
-<doc-anchor-target id="gpu-layers">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#gpu-layers">#</doc-anchor-trigger>
-        <span>GPU Layers</span>
-    </h3>
+<doc-anchor-target id="setup">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setup">#</doc-anchor-trigger>
+        <span>Setup</span>
+    </h2>
 </doc-anchor-target>
-<p>KoboldCpp is working, but you can improve performance by ensuring that as many layers as possible are offloaded to the GPU. You should see something like this in the terminal:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">llm_load_tensors: offloading 9 repeating layers to GPU
-llm_load_tensors: offloaded 9/33 layers to GPU
-llm_load_tensors:        CPU buffer size = 25215.88 MiB
-llm_load_tensors:      CUDA0 buffer size =  7043.34 MiB
-....................................................................................................
-llama_kv_cache_init:  CUDA_Host KV buffer size =  1479.19 MiB
-llama_kv_cache_init:      CUDA0 KV buffer size =   578.81 MiB</code></pre>
-</doc-codeblock></div>
-<p>Don&#x27;t be afraid of numbers; this part is easier than it looks. <code v-pre>CPU buffer size</code> refers to how much system RAM is being used. Ignore that. <code v-pre>CUDA0 buffer size</code> refers to how much GPU VRAM is being used. <code v-pre>CUDA_Host KV buffer size</code> and <code v-pre>CUDA0 KV buffer size</code> refer to how much GPU VRAM is being dedicated to your model&#x27;s context. In this case, KoboldCpp is using about 9 GB of VRAM.</p>
-<p>I have 12 GB of VRAM, and only 2 GB of VRAM is being used for context, so I have about 10 GB of VRAM left over to load the model. Because 9 layers used about 7 GB of VRAM and <code v-pre>7000 / 9 = 777.77</code> we can assume each layer uses approximately <code v-pre>777.77 MIB</code> of VRAM. <code v-pre>10,000 MIB / 777.77 = 12.8</code>, so I&#x27;ll round down and load 12 layers with this model from now on.</p>
-<p>Now do your own math using the model, context size, and VRAM for your system, and restart KoboldCpp:</p>
 <ul>
-<li>If you&#x27;re smart, you clicked <code v-pre>Save</code> before, and now you can load your previous configuration with <code v-pre>Load</code>. Otherwise, select the same settings you chose before.</li>
-<li>Change the <code v-pre>GPU Layers</code> to your new, VRAM-optimized number (12 layers in my case).</li>
-<li>Click <code v-pre>Save</code> to save your updated configuration.</li>
+<li><p>SillyTavern is able to connect with Horde out of the box with no additional setup required.</p>
+</li>
+<li><p>Select &#x27;KoboldAI Horde&#x27; from the API Dropdown Selector in the ST API Panel.</p>
+</li>
+<li><p>Select one or more Models (&#x27;AI brains&#x27; for the characters) from the Model Selector at the bottom of the panel.</p>
+</li>
+<li><p>Select a character and begin chatting.</p>
+<p><img src="../../../static/horde-config.png" alt="ST Kobold Horde API Connection Panel" /></p>
+</li>
 </ul>
-<p>You should now see something like this:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">llm_load_tensors: offloading 12 repeating layers to GPU
-llm_load_tensors: offloaded 12/33 layers to GPU
-llm_load_tensors:        CPU buffer size = 25215.88 MiB
-llm_load_tensors:      CUDA0 buffer size =  9391.12 MiB
-....................................................................................................
-llama_kv_cache_init:  CUDA_Host KV buffer size =  1286.25 MiB
-llama_kv_cache_init:      CUDA0 KV buffer size =   771.75 MiB</code></pre>
-</doc-codeblock></div>
-<p>KoboldCpp is using about 11.5 GB of my 12 GB VRAM. This should perform a lot better than the settings generated automatically by KoboldCpp.</p>
-<p><strong>Congratulations! You&#x27;re (actually) done!</strong></p>
-<p>For a more in-depth look at KoboldCpp settings, check out Kalmomaze&#x27;s <a href="https://rentry.org/llama_v2_sillytavern">Simple Llama + SillyTavern Setup Guide</a>.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>By default, your SillyTavern instance connects to the Horde&#x27;s low priority &#x27;guest account&#x27;.
+This means you may have to wait a long time for a reply.
+To reduce wait times, follow the tips down below.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="tips">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tips">#</doc-anchor-trigger>
+        <span>Tips</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><a href="https://aihorde.net/register">Register an account on the Horde website</a> then add your Horde key into the SillyTavern Horde API Key box.</li>
+<li><a href="https://github.com/Haidra-Org/AI-Horde-Worker#readme">Set up a Horde Worker</a> to provide your GPU for others.
+<ul>
+<li>Letting others use your GPU earns you <a href="https://github.com/Haidra-Org/AI-Horde/blob/main/FAQ.md#kudos">&#x27;Kudos&#x27;, a kind of Horde-only currency</a>.</li>
+<li>The more kudos your account has, the faster you will get chat responses from other Horde Workers.</li>
+<li>Kudos can also be used to create AI images on <a href="https://stablehorde.net">Stable Horde</a>.
+<ul>
+<li>SillyTavern supports Stable Horde image generation out of the box.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If your GPU isn&#x27;t powerful enough to run an AI, or you don&#x27;t have a computer, you can still <a href="https://github.com/Haidra-Org/AI-Horde/blob/main/FAQ.md#i-dont-have-a-powerful-gpu-how-can-i-get-kudos">participate in the Horde community to earn Kudos in various ways</a>.</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
@@ -305,7 +326,7 @@ llama_kv_cache_init:      CUDA0 KV buffer size =   771.75 MiB</code></pre>
                             </div>
                             <footer class="clear-both">
                                 <div class="flex flex-wrap items-center justify-between mt-14">
-                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/Usage/API_Connections/koboldcpp.md" target="_blank" rel="noopener">
+                                    <a class="my-2.5 inline-flex items-center text-sm whitespace-nowrap text-blue-500 dark:text-blue-400 hover:text-blue-700 hover:underline" href="https://github.com/SillyTavern/SillyTavern-Docs/edit/main/Usage/API_Connections/horde.md" target="_blank" rel="noopener">
                                         <svg class="mr-1.5" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M20 12c-.55 0-1 .45-1 1v7c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h7c.55 0 1-.45 1-1s-.45-1-1-1H4C2.35 3 1 4.35 1 6v14c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-7c0-.55-.45-1-1-1z" /><path d="M22.21 1.79c-1.18-1.18-3.24-1.18-4.41 0l-9.5 9.5c-.13.13-.22.29-.26.46l-1 4c-.08.34.01.7.26.95.18.2.44.3.7.3.08 0 .16-.01.24-.03l4-1c.18-.04.34-.13.46-.26l9.5-9.5c1.22-1.22 1.22-3.2.01-4.42zm-1.42 3l-9.3 9.3-2.11.53.53-2.11 9.3-9.3c.42-.42 1.16-.42 1.59 0 .43.43.43 1.15-.01 1.58z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         <span>Edit this page</span>
                                     </a>
@@ -313,20 +334,20 @@ llama_kv_cache_init:      CUDA0 KV buffer size =   771.75 MiB</code></pre>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api_connections/horde/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/koboldai/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Kobold​AI Horde</span>
+                                                <span class="block mt-1">Kobold​AI</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api_connections/mancer/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/koboldcpp/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Mancer</span>
+                                                <span class="block mt-1">Kobold​Cpp</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -370,6 +391,6 @@ llama_kv_cache_init:      CUDA0 KV buffer size =   771.75 MiB</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "KoboldCpp", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "KoboldAI Horde", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
