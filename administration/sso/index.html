@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783419702366">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783485446223">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -33,13 +33,13 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.783419702366" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.783485446223" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783419702366" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783485446223" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783419702366" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783485446223" data-turbo-eval="false" defer></script>
 
-    <Style>
+    <style>
         a {
             color: brown !important;
         }
@@ -53,32 +53,36 @@
         }
 
         .callout {
-          padding: 1rem;
-          margin-bottom: 1rem;
-          border: 1px solid #d2d6dc;
-          border-radius: 0.375rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #d2d6dc;
+            border-radius: 0.375rem;
         }
 
         .callout p {
-          margin-bottom: 0.5rem !important;
-          overflow: hidden;
+            margin-bottom: 0.5rem !important;
+            overflow: hidden;
         }
+
         .callout p:last-child {
-          margin-bottom: 0 !important;
+            margin-bottom: 0 !important;
         }
 
         div.callout:has(img) {
-          min-height: 8rem;
+            min-height: 8rem;
         }
 
         .callout img {
-          width: 3rem;
-          float: left;
-          margin-right: 1rem;
-          filter: invert(42%) hue-rotate(183deg) brightness(91%) contrast(83%);
+            width: 3rem;
+            float: left;
+            margin-right: 1rem;
+            filter: invert(42%) hue-rotate(183deg) brightness(91%) contrast(83%);
         }
-    </Style>
-    <link href="https://sillytavern.app/webfonts/NotoSans/stylesheet.css" rel="stylesheet">
+    </style>
+    <link href="/static/webfonts/NotoSans/stylesheet.css" rel="stylesheet"/>
+    <link href="/static/css/fontawesome.min.css" rel="stylesheet"/>
+    <link href="/static/css/solid.min.css" rel="stylesheet"/>
+    <link href="/static/css/brands.min.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -231,7 +235,8 @@
     </h1>
 </doc-anchor-target>
 <p>Use <a href="https://www.authelia.com/"><strong>Authelia</strong></a> or <a href="https://goauthentik.io/"><strong>Authentik</strong></a>.</p>
-<p>Authelia and Authentik are open-source single sign-on (SSO) apps. SSO allows you to create users and secure many different pages using a login portal presented on sites you want to secure. One of us primarily use this over ST&#x27;s authentication for their own domain use and while it is complex to setup, it is a good way to both learn SSO and secure your ST instance out on the internet more.</p>
+<p>Authelia and Authentik are open-source single sign-on (SSO) apps. SSO allows you to create users and secure many different pages using a login portal presented on sites you want to secure.</p>
+<p>While it is more complex to set up than the built-in <a href="../../usage/core-concepts/user-settings/#account-management">password management</a>, it is a good way to both learn SSO and increase the security of SillyTavern if it is exposed to the internet.</p>
 <p>If you plan to use Authelia to secure ST&#x27;s, you must enable <code v-pre>securityOverride</code> in <em>config.yaml</em>. Authlia will handle the login security, but ST has no way of knowing this and will refuse to start without securityOverride.</p>
 <p>If using Authelia it is recommened to disable ST&#x27;s basic auth since Authlia provides better functionality and the same security.</p>
 <p>If your Authelia username exactly matches the username of a SillyTavern user account in multi-user mode you can enable <code v-pre>autheliaAuth</code> in the <em>config.yaml</em> to directly login to the account using Authelia.</p>

@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783419702366">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783485446223">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -14,7 +14,7 @@
     <!-- Primary Meta Tags -->
     <title>User Settings | docs.ST.app</title>
     <meta name="title" content="User Settings | docs.ST.app">
-    <meta name="description" content="This page is a work in progress. Some sections may be incomplete or missing until my bot finishes writing them.">
+    <meta name="description" content="UI Customization">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://docs.sillytavern.app/usage/core-concepts/user-settings/">
@@ -23,23 +23,23 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://docs.sillytavern.app/usage/core-concepts/user-settings/">
     <meta property="og:title" content="User Settings | docs.ST.app">
-    <meta property="og:description" content="This page is a work in progress. Some sections may be incomplete or missing until my bot finishes writing them.">
+    <meta property="og:description" content="UI Customization">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://docs.sillytavern.app/usage/core-concepts/user-settings/">
     <meta property="twitter:title" content="User Settings | docs.ST.app">
-    <meta property="twitter:description" content="This page is a work in progress. Some sections may be incomplete or missing until my bot finishes writing them.">
+    <meta property="twitter:description" content="UI Customization">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.783419702366" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.783485446223" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783419702366" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783485446223" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783419702366" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783485446223" data-turbo-eval="false" defer></script>
 
-    <Style>
+    <style>
         a {
             color: brown !important;
         }
@@ -53,32 +53,36 @@
         }
 
         .callout {
-          padding: 1rem;
-          margin-bottom: 1rem;
-          border: 1px solid #d2d6dc;
-          border-radius: 0.375rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #d2d6dc;
+            border-radius: 0.375rem;
         }
 
         .callout p {
-          margin-bottom: 0.5rem !important;
-          overflow: hidden;
+            margin-bottom: 0.5rem !important;
+            overflow: hidden;
         }
+
         .callout p:last-child {
-          margin-bottom: 0 !important;
+            margin-bottom: 0 !important;
         }
 
         div.callout:has(img) {
-          min-height: 8rem;
+            min-height: 8rem;
         }
 
         .callout img {
-          width: 3rem;
-          float: left;
-          margin-right: 1rem;
-          filter: invert(42%) hue-rotate(183deg) brightness(91%) contrast(83%);
+            width: 3rem;
+            float: left;
+            margin-right: 1rem;
+            filter: invert(42%) hue-rotate(183deg) brightness(91%) contrast(83%);
         }
-    </Style>
-    <link href="https://sillytavern.app/webfonts/NotoSans/stylesheet.css" rel="stylesheet">
+    </style>
+    <link href="/static/webfonts/NotoSans/stylesheet.css" rel="stylesheet"/>
+    <link href="/static/css/fontawesome.min.css" rel="stylesheet"/>
+    <link href="/static/css/solid.min.css" rel="stylesheet"/>
+    <link href="/static/css/brands.min.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -230,6 +234,416 @@
         <span>User Settings</span>
     </h1>
 </doc-anchor-target>
+<div class="callout"><p><strong><a href="../uicustomization/">UI Customization</a></strong></p>
+<p>Change the theme, look and feel of the chat interface to suit your preferences.</p>
+</div>
+<div class="callout"><p><strong><a href="../visual-novel/">Visual Novel mode</a></strong></p>
+<p>Chat to characters with sprites, like in visual novels such as Doki Doki Literature Club and other famous VN games.</p>
+</div>
+<doc-anchor-target id="general-settings">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#general-settings">#</doc-anchor-trigger>
+        <span>General Settings</span>
+    </h2>
+</doc-anchor-target>
+<p>These are the core settings that affect your overall SillyTavern experience.</p>
+<doc-anchor-target id="ui-language">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-language">#</doc-anchor-trigger>
+        <span>UI Language</span>
+    </h3>
+</doc-anchor-target>
+<p>SillyTavern&#x27;s user interface is available in multiple languages. The language selector provides these options:</p>
+<ul>
+<li><strong>Default</strong>: Uses your system language if available</li>
+<li><strong>English</strong>: Forces English UI regardless of system settings</li>
+<li>Other languages available through the dropdown
+Note: This setting only affects the user interface text. For AI conversation translation, please use the Chat Translation extension.</li>
+</ul>
+<doc-anchor-target id="software-version">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#software-version">#</doc-anchor-trigger>
+        <span>Software Version</span>
+    </h3>
+</doc-anchor-target>
+<p>Your current version of SillyTavern is displayed in the top-right corner. This information is essential for:</p>
+<ul>
+<li>Troubleshooting problems</li>
+<li>Ensuring compatibility with extensions</li>
+<li>Determining if updates are available
+To update SillyTavern to the latest version, please refer to the <a href="../../../installation/updating/">Updating</a> documentation.</li>
+</ul>
+<doc-anchor-target id="account-management">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#account-management">#</doc-anchor-trigger>
+        <span>Account Management</span>
+    </h3>
+</doc-anchor-target>
+<p>Control your SillyTavern user account, back up your settings and user data, and manage user roles and permissions in <a href="../../../administration/multi-user/">multi-user mode</a>.</p>
+<doc-anchor-target id="account">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#account">#</doc-anchor-trigger>
+        <span><i class="fa-fw fa-solid fa-user-shield"></i> Account</span>
+    </h4>
+</doc-anchor-target>
+<p>In the Account dialog, you can view and edit your profile information, change your password, and manage account settings.</p>
+<p><strong>Profile Information</strong></p>
+<ul>
+<li>Display name (editable via pencil icon)</li>
+<li>User avatar (can also be changed using <a href="../personas/">Personas</a>)</li>
+<li>Account handle</li>
+<li>User role</li>
+<li>Account creation date</li>
+<li>Password status (locked/unlocked icon indicates protection)</li>
+</ul>
+<p><strong>Account Actions</strong></p>
+<ul>
+<li><strong>Settings Snapshots</strong>: Create, manage, and restore backups of your user settings</li>
+<li><strong>Download Backup</strong>: Export a complete backup of all your user data</li>
+<li><strong>Change Password</strong>: Update your account security credentials</li>
+</ul>
+<p><strong>Danger Zone</strong></p>
+<p>Critical account operations that should be used with caution:</p>
+<ul>
+<li><strong>Reset Settings</strong>: Restore all settings to factory defaults</li>
+<li><strong>Reset Everything</strong>: Complete account wipe and factory reset</li>
+</ul>
+<doc-anchor-target id="admin-panel">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#admin-panel">#</doc-anchor-trigger>
+        <span><i class="fa-fw fa-solid fa-user-tie"></i> Admin Panel</span>
+    </h4>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Applies to: <a href="../../../administration/multi-user/">multi-user mode</a></h5>
+<p>Multi-account features require <code v-pre>enableUserAccounts</code> to be set to true in config.yaml.</p>
+        </div>
+    </div>
+</div>
+<p>Select <strong>Manage Users</strong> to view and manage existing user accounts.</p>
+<doc-anchor-target id="user-profile">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#user-profile">#</doc-anchor-trigger>
+        <span>User Profile</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li>Custom avatar management (upload/remove)</li>
+<li>Display name and handle</li>
+<li>Role and status information</li>
+<li>Account creation date</li>
+<li>Password protection status</li>
+</ul>
+<doc-anchor-target id="account-controls">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#account-controls">#</doc-anchor-trigger>
+        <span>Account Controls</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li><i class="fa-fw fa-solid fa-pencil"></i> Edit display name</li>
+<li><i class="fa-fw fa-solid fa-check"></i> Enable account</li>
+<li><i class="fa-fw fa-solid fa-ban"></i> Disable account</li>
+<li><i class="fa-fw fa-solid fa-arrow-up"></i> Promote to admin</li>
+<li><i class="fa-fw fa-solid fa-arrow-down"></i> Demote to regular user</li>
+</ul>
+<doc-anchor-target id="management-actions">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#management-actions">#</doc-anchor-trigger>
+        <span>Management Actions</span>
+    </h5>
+</doc-anchor-target>
+<ul>
+<li><i class="fa-fw fa-solid fa-download"></i> Download user data backup</li>
+<li><i class="fa-fw fa-solid fa-key"></i> Change user password</li>
+<li><i class="fa-fw fa-solid fa-trash"></i> Delete account</li>
+</ul>
+<doc-anchor-target id="new-user">
+    <h5>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#new-user">#</doc-anchor-trigger>
+        <span>New User</span>
+    </h5>
+</doc-anchor-target>
+<p>Select <strong>New User</strong> to create a new user account.</p>
+<ul>
+<li>Display Name* (e.g., &quot;John Snow&quot;)</li>
+<li>User Handle* (lowercase letters, numbers, and dashes only)</li>
+<li>Password (optional)</li>
+<li>Password Confirmation</li>
+</ul>
+<p>Creating a new user automatically generates a subfolder in the /data/ directory using the user&#x27;s handle as the folder name. Fields marked with * are required.</p>
+<doc-anchor-target id="logout">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#logout">#</doc-anchor-trigger>
+        <span><i class="fa-fw fa-solid fa-right-from-bracket"></i> Logout</span>
+    </h4>
+</doc-anchor-target>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-500 dark:text-blue-400" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Applies to: <a href="../../../administration/multi-user/">multi-user mode</a></h5>
+        </div>
+    </div>
+</div>
+<p>Sign out of your current session.</p>
+<doc-anchor-target id="settings-search">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#settings-search">#</doc-anchor-trigger>
+        <span>Settings Search</span>
+    </h3>
+</doc-anchor-target>
+<p>A convenient search bar that helps you quickly find specific settings:</p>
+<ul>
+<li>Type any keyword to filter and highlight settings anywhere in User Settings</li>
+<li>Searches through setting names and descriptions</li>
+<li>Helps navigate complex settings more efficiently</li>
+</ul>
+<doc-anchor-target id="ui-theme">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ui-theme">#</doc-anchor-trigger>
+        <span>UI Theme</span>
+    </h2>
+</doc-anchor-target>
+<p>Change the appearance of the chat interface to suit your preferences.</p>
+<p>For more information on the settings in this section of <i class="fa-fw fa-solid fa-user-gear" title="User Settings icon"></i> <strong>User Settings</strong>, see <a href="../uicustomization/#ui-theme">UI Customization</a>.</p>
+<doc-anchor-target id="character-handling">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#character-handling">#</doc-anchor-trigger>
+        <span>Character Handling</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Char List Subheader</strong>: Choose what additional information to display under character names in the <a href="../characterdesign/"><i class="fa-fw fa-solid fa-address-card" title="Characters icon"></i> Characters</a> list:
+<ul>
+<li>Character Version</li>
+<li>Created by</li>
+</ul>
+</li>
+<li><strong>Import Card Tags</strong>: Controls how tags are handled when importing character cards:
+<ul>
+<li>Ask - Show dialog for each import</li>
+<li>None - Don&#x27;t import any tags</li>
+<li>All - Import all tags</li>
+<li>Existing - Only import tags that already exist</li>
+</ul>
+</li>
+<li><strong>Advanced Character Search</strong>: When enabled, uses fuzzy matching and searches all character data fields, not just names.</li>
+<li><strong>Prefer Char. Prompt</strong>: If enabled, uses the character card&#x27;s System Prompt override when available.</li>
+<li><strong>Prefer Char. Instructions</strong>: If enabled, uses the character card&#x27;s Post-History Instructions override when available.</li>
+<li><strong>Never resize avatars</strong>: Prevents cropping/resizing of imported character images. When disabled, images are resized to 512x768.</li>
+<li><strong>Show avatar filenames</strong>: Displays actual filenames of character avatars in the character list.</li>
+<li><strong>Spoiler Free Mode</strong>: Hides character definitions behind a spoiler button in the editor panel.</li>
+</ul>
+<doc-anchor-target id="miscellaneous">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#miscellaneous">#</doc-anchor-trigger>
+        <span>Miscellaneous</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>Reload Chat</strong>: Reloads and redraws the current chat.</li>
+<li><strong><doc-anchor-trigger to="#debug-menu">Debug Menu</doc-anchor-trigger></strong>: Access debugging options.</li>
+<li><strong>Smooth Streaming</strong>: Experimental feature for smoother text generation. Includes speed control slider.</li>
+<li><strong><a href="../uicustomization/#message-sound">Message Sound</a></strong>: Plays a sound when message generation completes.
+<ul>
+<li><strong>Background Sound Only</strong>: Only plays sounds when browser tab is unfocused.</li>
+</ul>
+</li>
+<li><strong>Relaxed API URLs</strong>: Reduces formatting requirements for API URLs.</li>
+<li><strong>Lorebook Import Dialog</strong>: Shows import dialog for World Info/Lorebook when importing characters with embedded lore.</li>
+<li><strong>Auto-select Input Text</strong>: Automatically selects text in certain input fields when clicked.</li>
+<li><strong>Markdown Hotkeys</strong>: Enables keyboard shortcuts for markdown formatting.</li>
+<li><strong>Restore User Input</strong>: Preserves unsaved user input when page is refreshed.</li>
+<li><strong>MovingUI</strong>: Allows repositioning UI elements by dragging (PC only).
+<ul>
+<li><i class="fa-solid fa-recycle" title="Reset icon"></i> <strong>Reset</strong> button to restore default positions</li>
+<li>Preset system for saving/loading UI layouts</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="chatmessage-handling">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chatmessage-handling">#</doc-anchor-trigger>
+        <span>Chat/Message Handling</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="message-display-settings">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#message-display-settings">#</doc-anchor-trigger>
+        <span>Message Display Settings</span>
+    </h3>
+</doc-anchor-target>
+<p>Controls how messages are loaded and displayed in the chat interface. These settings affect the overall chat experience and performance.</p>
+<ul>
+<li><strong># Messages to Load</strong>: Number of chat history messages to load before pagination (0 = All)</li>
+<li><strong>Streaming FPS</strong>: Update speed of streamed text (5-100 FPS)</li>
+<li><strong>Example Messages Behavior</strong>:
+<ul>
+<li>Gradual push-out</li>
+<li>Always include examples</li>
+<li>Never include examples</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="input--response-controls">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#input--response-controls">#</doc-anchor-trigger>
+        <span>Input &amp; Response Controls</span>
+    </h3>
+</doc-anchor-target>
+<p>Settings that determine how messages are sent and how the AI continues its responses.</p>
+<ul>
+<li><strong>Enter to Send</strong>: Choose between Disabled, Automatic (PC), or Enabled</li>
+<li><strong>&quot;Send&quot; to Continue</strong>: Use Send button to continue AI responses</li>
+<li><strong>Quick &quot;Continue&quot; button</strong>: Show button to extend AI&#x27;s last message</li>
+<li><strong>Quick &quot;Impersonate&quot; button</strong>: Show button for single-message character impersonation</li>
+<li><strong>Swipes</strong>: Show arrow buttons for alternative AI responses (PC and mobile)</li>
+<li><strong>Gestures</strong>: Enable swipe gestures for generation (Mobile only)</li>
+</ul>
+<doc-anchor-target id="auto-management">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#auto-management">#</doc-anchor-trigger>
+        <span>Auto-Management</span>
+    </h3>
+</doc-anchor-target>
+<p>Automated features that help manage chat flow and content.</p>
+<ul>
+<li><strong>Auto-load Last Chat</strong>: Automatically load the most recent chat on startup</li>
+<li><strong>Auto-scroll Chat</strong>: Automatically scroll to newest messages</li>
+<li><strong>Auto-save Message Edits</strong>: Save message edits without confirmation</li>
+<li><strong>Confirm message deletion</strong>: Prompt before deleting messages</li>
+<li><strong>Auto-fix Markdown</strong>: Automatically correct markdown formatting</li>
+</ul>
+<doc-anchor-target id="auto-swipe">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#auto-swipe">#</doc-anchor-trigger>
+        <span>Auto-swipe</span>
+    </h4>
+</doc-anchor-target>
+<p>Automatically reject and regenerate AI messages based on configurable criteria.</p>
+<ul>
+<li><strong>Enable Auto-swipe</strong>: Master toggle for the auto-swipe function</li>
+<li><strong>Minimum generated message length</strong>: Triggers an auto-swipe if the message is shorter than this value</li>
+<li><strong>Blacklisted words</strong>: List of words that can trigger auto-swipe, separated by commas</li>
+<li><strong>Blacklisted word count to swipe</strong>: Minimum number of blacklisted words that must be detected to trigger an auto-swipe</li>
+</ul>
+<doc-anchor-target id="auto-continue">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#auto-continue">#</doc-anchor-trigger>
+        <span>Auto-Continue</span>
+    </h4>
+</doc-anchor-target>
+<p>Automatically continues a response if the model stopped before reaching a certain length.</p>
+<p>This lets your AI write a long response in multiple parts, so that you can have a short <a href="../../common-settings/#response-tokens">response length setting</a> while still getting long replies.</p>
+<p>It will not make the AI write more than it would have otherwise. Asking the AI to continue a message that it considers &quot;finished&quot; does not usually work. See <a href="../../faq/#how-to-make-the-ai-write-more">How to make the AI write more?</a> for other ideas.</p>
+<ul>
+<li><strong>Enable Auto-continue</strong>: Master toggle for automatic continuation</li>
+<li><strong>Allow for Chat Completion APIs</strong>: Enables auto-continue functionality for Chat Completion API endpoints</li>
+<li><strong>Target length (tokens)</strong>: The desired message length in tokens - will trigger continue if message is shorter than this value (0-1024)</li>
+</ul>
+<doc-anchor-target id="message-formatting--display">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#message-formatting--display">#</doc-anchor-trigger>
+        <span>Message Formatting &amp; Display</span>
+    </h3>
+</doc-anchor-target>
+<p>Controls how messages are formatted and what content is displayed.</p>
+<ul>
+<li><strong>Forbid External Media</strong>: Block embedded media from external domains</li>
+<li><strong>Show {{char}}: in responses</strong>: Allow character name display format</li>
+<li><strong>Show {{user}}: in responses</strong>: Allow user name display format</li>
+<li><strong>Show <tags> in responses</strong>: Allow HTML markup alongside Markdown</li>
+<li><strong>Relax message trim in Groups</strong>: Allow multi-character dialogue in group messages</li>
+<li><strong>Show group chat queue</strong>: Display response order in group chats</li>
+</ul>
+<doc-anchor-target id="prompt-inspection-and-debugging">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#prompt-inspection-and-debugging">#</doc-anchor-trigger>
+        <span>Prompt Inspection and Debugging</span>
+    </h3>
+</doc-anchor-target>
+<p>Technical settings for debugging and advanced functionality.</p>
+<ul>
+<li><strong>Log prompts to console</strong>: Output prompts to browser console</li>
+<li><strong>Request token probabilities</strong>: Enable token probability analysis</li>
+</ul>
+<doc-anchor-target id="autocomplete">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#autocomplete">#</doc-anchor-trigger>
+        <span>AutoComplete</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Auto-hide details</li>
+<li>Matching style (Starts with/Includes/Fuzzy)</li>
+<li>Visual style (Theme/Dark/Light)</li>
+<li>Keyboard selection options</li>
+<li>Font scaling</li>
+<li>Width controls</li>
+</ul>
+<doc-anchor-target id="stscript-settings">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#stscript-settings">#</doc-anchor-trigger>
+        <span>STscript Settings</span>
+    </h2>
+</doc-anchor-target>
+<p>Configuration options for the <a href="../../st-script/">STscript</a> parser functionality.</p>
+<doc-anchor-target id="strict_escaping">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#strict_escaping">#</doc-anchor-trigger>
+        <span>STRICT_ESCAPING</span>
+    </h3>
+</doc-anchor-target>
+<p>The strict escaping mode provides more precise control over how special characters are handled in your scripts. When enabled, any character that has special meaning in STscript (like brackets, braces, or formatting characters) can be escaped using a backslash (). This mode also allows backslashes themselves to be escaped, enabling you to precisely control when characters should be interpreted literally versus when they should maintain their special function.
+For example:</p>
+<ul>
+<li><code v-pre>\{\{</code> will render as literal <code v-pre>{{</code> instead of starting a macro</li>
+<li><code v-pre>\\</code> will render as a single literal backslash</li>
+<li><code v-pre>\*</code> will show as literal asterisk instead of starting italic formatting</li>
+</ul>
+<p>This is particularly useful when working with complex scripts that need to include literal special characters while still maintaining STscript functionality.</p>
+<doc-anchor-target id="replace_getvar">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#replace_getvar">#</doc-anchor-trigger>
+        <span>REPLACE_GETVAR</span>
+    </h3>
+</doc-anchor-target>
+<p>This flag modifies how variable retrieval macros (<code v-pre>{{getvar::}}</code> and <code v-pre>{{getglobalvar::}}</code>) handle their contents. When enabled, it prevents these macros from automatically evaluating any macro-like values they contain.
+For example, if a variable contains the text &quot;{{newline}}&quot;, with this flag enabled:</p>
+<ul>
+<li>The text will remain literally as &quot;{{newline}}&quot; instead of being converted to a line break</li>
+<li>This is accomplished by internally converting these getter macros into scoped variables</li>
+<li>Helps maintain literal values when working with stored variables that might contain macro-like syntax
+This flag is particularly valuable when you need to preserve the exact content of variables without unexpected macro evaluation.</li>
+</ul>
+<doc-anchor-target id="debug-menu">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#debug-menu">#</doc-anchor-trigger>
+        <span>Debug menu</span>
+    </h2>
+</doc-anchor-target>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -242,16 +656,74 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>This page is a work in progress. Some sections may be incomplete or missing until my bot finishes writing them.</p>
+            <h5>These functions are intended for advanced users only.</h5>
+<p>Do not use them unless you fully understand their consequences.</p>
         </div>
     </div>
 </div>
-<div class="callout"><p><strong><a href="../uicustomization/">UI Customization</a></strong></p>
-<p>Change the look and feel of the chat interface to suit your preferences.</p>
-</div>
-<div class="callout"><p><strong><a href="../visual-novel/">Visual Novel mode</a></strong></p>
-<p>Chat to characters with sprites, like in visual novels such as Doki Doki Literature Club and other famous VN games.</p>
-</div>
+<p>The Debug Menu provides functionality for troubleshooting, maintenance, and development purposes. These functions should be used with caution as they can significantly impact your SillyTavern installation.</p>
+<p>Because extensions can add debug functions, the available options will vary depending on the extensions you have installed.</p>
+<doc-anchor-target id="translation--locale-functions">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#translation--locale-functions">#</doc-anchor-trigger>
+        <span>Translation &amp; Locale Functions</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Get missing translations</strong>: Analyzes the current locale (or all locales if English is selected) for missing translations and outputs results to browser console</li>
+<li><strong>Apply locale</strong>: Forces a refresh of the current language settings by reapplying the selected locale</li>
+</ul>
+<doc-anchor-target id="cache--storage-management">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cache--storage-management">#</doc-anchor-trigger>
+        <span>Cache &amp; Storage Management</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Clear WebSearch cache</strong>: Removes all stored search results from local cache</li>
+<li><strong>Purge all vector indices</strong>: Completely removes all stored vectors across all sources</li>
+<li><strong>Reset token cache</strong>: Clears stored token counts, forcing complete re-tokenization of all chats</li>
+<li><strong>Delete itemized prompts</strong>: Removes all itemized prompts from local storage</li>
+</ul>
+<doc-anchor-target id="data--statistics">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#data--statistics">#</doc-anchor-trigger>
+        <span>Data &amp; Statistics</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Refresh Stat File</strong>: Rebuilds the statistics file using existing chat data</li>
+<li><strong>Backfill token counters</strong>: Recalculates token counts for all messages in current chat
+<ul>
+<li>Useful when switching between models with different tokenizers</li>
+<li>Triggers chat reload after completion</li>
+<li>Visual changes only, does not modify chat content</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="api--extension-testing">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#api--extension-testing">#</doc-anchor-trigger>
+        <span>API &amp; Extension Testing</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Change Mancer base URL</strong>: Modify the base URL for Mancer API server</li>
+<li><strong>Test WebSearch extension</strong>: Performs a test search using current settings</li>
+<li><strong>Send a generation request</strong>: Tests text generation using the currently selected API</li>
+</ul>
+<doc-anchor-target id="system--debug-tools">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#system--debug-tools">#</doc-anchor-trigger>
+        <span>System &amp; Debug Tools</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Force onboarding</strong>: Restarts the onboarding process</li>
+<li><strong>Toggle event tracing</strong>: Enables/disables event tracking for debugging</li>
+<li><strong>Copy ST setup</strong>: [Work in Progress] Copies system configuration data to clipboard for bug reports
+Each function can be executed using the &quot;Execute&quot; button beneath its description. Consider backing up your data before using these tools, as some operations cannot be undone.</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
