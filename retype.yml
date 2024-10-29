@@ -1,23 +1,22 @@
 input: .
 output: .retype
-url: docs.sillytavern.app
+url: https://sillytavern-docs.cerulean.foo
 meta:
-  title: " | docs.ST.app"
+    title: " | docs.cd.foo"
 branding:
-  logo: static/logo.png
-  title: SillyTavern Documentation
-  label:
+    logo: static/logo.png
+    title: ServiceTesnor Documentation
+    label:
 edit:
-  repo: "https://github.com/SillyTavern/SillyTavern-Docs/edit"
-integrations:
-  googleAnalytics:
-    id: G-0NTJMWH0TW1
+    repo: "https://github.com/ceruleandeep/SillyTavern-Docs/edit"
 links:
-- text: GitHub
-  link: https://github.com/SillyTavern/SillyTavern
-- text: Discord
-  link: https://discord.gg/sillytavern
-- text: Reddit
-  link: https://www.reddit.com/r/SillyTavernAI/
+    - text: Real Docs
+      link: https://docs.sillytavern.app
+    - text: GitHub
+      link: https://github.com/SillyTavern/SillyTavern
+    - text: Discord
+      link: https://discord.gg/sillytavern
+    - text: Reddit
+      link: https://www.reddit.com/r/SillyTavernAI/
 footer:
-  copyright: "&copy; Copyright {{ year }}. All rights reserved."
+    copyright: "&copy; Copyright {{ year }}. All rights reserved."
