@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/SillyTavern-Docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783495637412">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783498309543">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,11 +32,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../favicon.ico" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.6.0.783495637412" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.783498309543" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783495637412" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783498309543" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783495637412" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783498309543" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -78,10 +78,10 @@
             filter: invert(42%) hue-rotate(183deg) brightness(91%) contrast(83%);
         }
     </style>
-    <link href="/static/webfonts/NotoSans/stylesheet.css" rel="stylesheet"/>
-    <link href="/static/css/fontawesome.min.css" rel="stylesheet"/>
-    <link href="/static/css/solid.min.css" rel="stylesheet"/>
-    <link href="/static/css/brands.min.css" rel="stylesheet"/>
+    <link href="static/webfonts/NotoSans/stylesheet.css" rel="stylesheet"/>
+    <link href="static/css/fontawesome.min.css" rel="stylesheet"/>
+    <link href="static/css/solid.min.css" rel="stylesheet"/>
+    <link href="static/css/brands.min.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -571,11 +571,11 @@ To update SillyTavern to the latest version, please refer to the <a href="../../
 <p>Controls how messages are formatted and what content is displayed.</p>
 <ul>
 <li><strong>Forbid External Media</strong>: Block embedded media from external domains</li>
-<li><strong>Show {{char}}: in responses</strong>: Allow character name display format</li>
-<li><strong>Show {{user}}: in responses</strong>: Allow user name display format</li>
-<li><strong>Show <tags> in responses</strong>: Allow HTML markup alongside Markdown</li>
-<li><strong>Relax message trim in Groups</strong>: Allow multi-character dialogue in group messages</li>
-<li><strong>Show group chat queue</strong>: Display response order in group chats</li>
+<li><strong>Show {{char}}: in responses</strong>: Retain character name prefix in responses if generated</li>
+<li><strong>Show {{user}}: in responses</strong>: Retain user name prefix in responses if generated</li>
+<li><strong>Show <tags> in responses</strong>: Allow (some) HTML tags in responses to be displayed as HTML</li>
+<li><strong>Relax message trim in Groups</strong>: Allow AI to speak for other characters in group chats, rather than stopping the response generation</li>
+<li><strong>Show group chat queue</strong>: Display response order in the character list for group chats</li>
 </ul>
 <doc-anchor-target id="prompt-inspection-and-debugging">
     <h3>
@@ -583,10 +583,9 @@ To update SillyTavern to the latest version, please refer to the <a href="../../
         <span>Prompt Inspection and Debugging</span>
     </h3>
 </doc-anchor-target>
-<p>Technical settings for debugging and advanced functionality.</p>
 <ul>
 <li><strong>Log prompts to console</strong>: Output prompts to browser console</li>
-<li><strong>Request token probabilities</strong>: Enable token probability analysis</li>
+<li><strong>Request token probabilities</strong>: Request token probabilities for AI responses from the API. Where available, these can be viewed in <i class="fa-solid fa-bars" title="Burger Menu icon"></i> Token Probabilities.</li>
 </ul>
 <doc-anchor-target id="autocomplete">
     <h3>
@@ -608,35 +607,26 @@ To update SillyTavern to the latest version, please refer to the <a href="../../
         <span>STscript Settings</span>
     </h2>
 </doc-anchor-target>
-<p>Configuration options for the <a href="../../st-script/">STscript</a> parser functionality.</p>
+<p>Configuration options for the <a href="../../st-script/#parser-flags">STscript parser</a>.</p>
 <doc-anchor-target id="strict_escaping">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#strict_escaping">#</doc-anchor-trigger>
         <span>STRICT_ESCAPING</span>
     </h3>
 </doc-anchor-target>
-<p>The strict escaping mode provides more precise control over how special characters are handled in your scripts. When enabled, any character that has special meaning in STscript (like brackets, braces, or formatting characters) can be escaped using a backslash (). This mode also allows backslashes themselves to be escaped, enabling you to precisely control when characters should be interpreted literally versus when they should maintain their special function.
-For example:</p>
 <ul>
-<li><code v-pre>\{\{</code> will render as literal <code v-pre>{{</code> instead of starting a macro</li>
-<li><code v-pre>\\</code> will render as a single literal backslash</li>
-<li><code v-pre>\*</code> will show as literal asterisk instead of starting italic formatting</li>
+<li>Pipes don&#x27;t need to be escaped in quoted values.</li>
+<li>A backslash in front of a symbol can be escaped to provide the literal backslash followed by the functional symbol.</li>
 </ul>
-<p>This is particularly useful when working with complex scripts that need to include literal special characters while still maintaining STscript functionality.</p>
+<p>See <a href="../../st-script/#strict-escaping">Strict Escaping</a> for more information.</p>
 <doc-anchor-target id="replace_getvar">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#replace_getvar">#</doc-anchor-trigger>
         <span>REPLACE_GETVAR</span>
     </h3>
 </doc-anchor-target>
-<p>This flag modifies how variable retrieval macros (<code v-pre>{{getvar::}}</code> and <code v-pre>{{getglobalvar::}}</code>) handle their contents. When enabled, it prevents these macros from automatically evaluating any macro-like values they contain.
-For example, if a variable contains the text &quot;{{newline}}&quot;, with this flag enabled:</p>
-<ul>
-<li>The text will remain literally as &quot;{{newline}}&quot; instead of being converted to a line break</li>
-<li>This is accomplished by internally converting these getter macros into scoped variables</li>
-<li>Helps maintain literal values when working with stored variables that might contain macro-like syntax
-This flag is particularly valuable when you need to preserve the exact content of variables without unexpected macro evaluation.</li>
-</ul>
+<p>Helps to avoid double-substitutions when the variable values contain text that could be interpreted as macros.</p>
+<p>See <a href="../../st-script/#replace-variable-macros">Replace Variable Macros</a> for more information.</p>
 <doc-anchor-target id="debug-menu">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#debug-menu">#</doc-anchor-trigger>
