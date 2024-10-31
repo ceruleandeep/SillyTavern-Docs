@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/SillyTavern-Docs">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783679674766">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783690390291">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,11 +32,11 @@
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="../../../favicon.ico" rel="icon">
-    <link href="../../../resources/css/retype.css?v=3.6.0.783679674766" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.783690390291" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783679674766" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.783690390291" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783679674766" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.783690390291" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -298,9 +298,9 @@
 </doc-tabs>
 <p>The default Main Prompt is:</p>
 <blockquote>
-<p>Write {{char}}&#x27;s next reply in a fictional chat between {{char}} and  {{user}}.</p>
+<p>Write {{char}}&#x27;s next reply in a fictional chat between {{char}} and {{user}}.</p>
 </blockquote>
-<p>The {{char}} and  {{user}} placeholders are replaced with the names of the character and persona that you&#x27;ve defined in the conversation.</p>
+<p>The {{char}} and {{user}} placeholders are replaced with the names of the character and persona that you&#x27;ve defined in the conversation.</p>
 <p>You can use any of the supported <a href="../characterdesign/#macros-replacement-tags">{{macro}}</a> tags in the Main Prompt to include information that might vary between conversations or changes as the conversation progresses.</p>
 <doc-anchor-target id="adjusting-the-main-prompt">
     <h3>
@@ -349,26 +349,22 @@
 <blockquote>
 <p>Answer truthfully and write out your thinking step by step to be sure you get the right answer.</p>
 </blockquote>
-<p>The AI will more easily follow instructions about what it should do than what it should not do. For example, if you want the AI to avoid writing in a certain way, it&#x27;s better to tell it how you want it to write instead. And while <code v-pre>Do not decide what  \{\{user\}\} says or does</code> is commonly included in prompts to prevent the AI from controlling your persona, some users find <code v-pre>Write \{\{char\}\}'s responses in a way that respects  \{\{user\}\}'s autonomy</code> is more effective.</p>
+<p>The AI will more easily follow instructions about what it should do than what it should not do. For example, if you want the AI to avoid writing in a certain way, it&#x27;s better to tell it how you want it to write instead. And while <code v-pre>Do not decide what \{\{user\}\} says or does</code> is commonly included in prompts to prevent the AI from controlling your persona, some users find <code v-pre>Write \{\{char\}\}'s responses in a way that respects \{\{user\}\}'s autonomy</code> is more effective.</p>
 <p>There is often a better place than the Main Prompt to include information about the user or characters, modify a character&#x27;s writing and speaking style, or give other specific instructions. The Main Prompt is best used for general instructions about the conversation as a whole, or about a type of conversation that you want to have.</p>
-<doc-anchor-target id="adjusting-the-main-prompt-with-conversation-history">
+<doc-anchor-target id="effect-of-message-history">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#adjusting-the-main-prompt-with-conversation-history">#</doc-anchor-trigger>
-        <span>Adjusting the Main Prompt with Conversation History</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#effect-of-message-history">#</doc-anchor-trigger>
+        <span>Effect of Message History</span>
     </h3>
 </doc-anchor-target>
-<p>When adjusting the main prompt to improve the AI&#x27;s responses, consider the effect of conversation history. The AI picks up a lot from the conversation history. The history is its memory of past events, character interactions and relationships, and its style guide for word choice and writing style.</p>
+<p>When adjusting the main prompt to improve the AI&#x27;s responses, consder that the AI picks up a lot from the message history. The history is its memory of past events, character interactions and relationships, and its style guide for word choice and writing style.</p>
+<p>Use this to your advantage by also providing <a href="../characterdesign/#examples-of-dialogue">example messages</a> showing how you want the AI to respond. Showing what you want is often easier than trying to explain it!</p>
+<p>When your conversation already has history, changing the main prompt has a limited effect on the AI&#x27;s responses. In terms of events and relationships, the AI assumes that the main prompt occurred in the distant past, and the message history updates it. In terms of writing style and word choice, the AI assumes that all the messages in history were generated according to the rules in the <em>current</em> main prompt, and that it should continue to generate messages in the same way. Some suggestions for dealing with this are:</p>
 <ul>
-<li><p>Use this to your advantage by providing <a href="../characterdesign/#examples-of-dialogue">example messages</a> showing how you want the AI to respond. Showing the AI what you want is often easier than trying to explain it!</p>
-</li>
-<li><p>If you already have an established conversation history, changing the main prompt has a limited effect on the AI&#x27;s responses. In terms of events and relationships, the AI assumes that the main prompt occurred in the distant past, and the message history updates events. In terms of writing style and word choice, the AI assumes that all the messages in history were generated in accordance with the rules in the <em>current</em> main prompt, and that it should continue to generate messages in the same way. Some suggestions for dealing with this are:</p>
-<ul>
-<li>insert current instructions closer to the end of message history, for example by using an <a href="../authors-note/">Author&#x27;s Note</a></li>
+<li>insert current instructions close to or after the end of message history, for example by using an <a href="../authors-note/">Author&#x27;s Note</a></li>
 <li>test your changes to the main prompt by starting a new conversation</li>
 <li>edit the message history to remove or correct examples of unwanted behaviour</li>
 <li>use the <doc-anchor-trigger to="#post-history-instructions">Post-History Instructions</doc-anchor-trigger> to provide final instructions to the AI</li>
-</ul>
-</li>
 </ul>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
@@ -397,7 +393,7 @@
 <p>There are situations where &quot;fictional chat&quot; might not be the right context for your conversation.</p>
 <p>You can remove the &quot;fictional&quot; context from the Main Prompt:</p>
 <blockquote>
-<p>Write {{char}}&#x27;s next reply in a conversation with  {{user}}.</p>
+<p>Write {{char}}&#x27;s next reply in a conversation with {{user}}.</p>
 </blockquote>
 <p>You may not want the AI to think of itself as role-playing at all. Instead of removing the idea of a character, you can remove the idea of an AI:</p>
 <blockquote>
@@ -421,7 +417,7 @@
 </blockquote>
 <p>It helps to clarify the role of the user in the conversation. Are your messages part of the story, or are they instructions to the narrator about what your character does or says? An example that includes the user in the story:</p>
 <blockquote>
-<p>The story should progress by responding to the actions and dialogue of  {{user}}. Narrate the story in third person.</p>
+<p>The story should progress by responding to the actions and dialogue of {{user}}. Narrate the story in third person.</p>
 </blockquote>
 <p>An example that keeps the user out of the story:</p>
 <blockquote>
@@ -434,7 +430,7 @@
         <span>Post-History Instructions</span>
     </h2>
 </doc-anchor-target>
-<p>Post-History Instructions are additional instructions that are sent to the AI after the main prompt and the user message. They can be used to provide additional context or instructions to the AI based on the conversation history.</p>
+<p>Post-History Instructions are additional instructions sent to the AI after the main prompt and the user message. They can be used to provide additional context or instructions to the AI based on the message history.</p>
 <p>Since the Post-History Instructions are sent after the user message, they are the final instructions that the AI receives before generating a response. The AI usually gives them a higher priority than the main prompt, and they can override the main prompt&#x27;s instructions.</p>
 <doc-tabs>
 <doc-tab v-cloak id="text-completion-apis">
