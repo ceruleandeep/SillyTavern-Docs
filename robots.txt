@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ceruleandeep.github.io/SillyTavern-Docs/sitemap.xml.gz
+Sitemap: https://sillytavern-docs.cerulean.foo/sitemap.xml.gz
