@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783914880365">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.784783356392">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.783914880365" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.784783356392" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783914880365" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.784783356392" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783914880365" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.784783356392" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -1148,7 +1148,7 @@ This example will get you 3 last messages in the chat:</p>
         <span>World Info commands</span>
     </h2>
 </doc-anchor-target>
-<p>World Info (also known as Lorebook) is a highly utilitarian tool for dynamically inserting data into the prompt. See the dedicated page for more detailed explanation: <a href="../core-concepts/worldinfo/">World Info</a>.</p>
+<p>World Info (also known as Lorebook) is a highly utilitarian tool for dynamically inserting data into the prompt. See the dedicated page for more detailed explanation: <a href="../worldinfo/">World Info</a>.</p>
 <ol>
 <li><code v-pre>/getchatbook</code> – gets a name of the chat-bound World Info file or create a new one if was unbound, and pass it down the pipe.</li>
 <li><code v-pre>/findentry file=bookName field=fieldName [text]</code> – finds a UID of the record from the specified file (or a variable pointing to a file name) using fuzzy matching of a field value with the provided text (default field: <code v-pre>key</code>) and passes the UID down the pipe, e.g. <code v-pre>/findentry file=chatLore field=key Shadowfang</code>.</li>
@@ -1287,8 +1287,8 @@ This example will get you 3 last messages in the chat:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
-/findentry file=chatLore field=key Shadowfang |
-/getentryfield file=chatLore field=key |
+/findentry file={{getvar::chatLore}} field=key Shadowfang |
+/getentryfield file={{getvar::chatLore}} field=key |
 /echo</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="example-2-create-a-chat-lorebook-entry-with-key-and-content">
@@ -1300,7 +1300,7 @@ This example will get you 3 last messages in the chat:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
-/createentry file=chatLore key=&quot;Milla&quot; Milla Basset is a friend of Lilac and Carol. She is a hush basset puppy who possesses the power of alchemy. |
+/createentry file={{getvar::chatLore}} key=&quot;Milla&quot; Milla Basset is a friend of Lilac and Carol. She is a hush basset puppy who possesses the power of alchemy. |
 /echo</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="example-3-expand-an-existing-lorebook-entry-with-new-information-from-the-chat">
@@ -1312,14 +1312,14 @@ This example will get you 3 last messages in the chat:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
 <pre class="language-none"><code v-pre class="language-none">/getchatbook | /setvar key=chatLore |
-/findentry file=chatLore field=key Milla |
+/findentry file={{getvar::chatLore}} field=key Milla |
 /setvar key=millaUid |
-/getentryfield file=chatLore field=content |
+/getentryfield file={{getvar::chatLore}} field=content |
 /setvar key=millaContent |
 /gen lock=on Tell me more about Milla Basset based on the provided conversation history. Incorporate existing information into your reply: {{getvar::millaContent}} |
 /setvar key=millaContent |
 /echo New content: {{pipe}} |
-/setentryfield file=chatLore uid=millaUid field=content {{getvar::millaContent}}</code></pre>
+/setentryfield file={{getvar::chatLore}} uid=millaUid field=content {{getvar::millaContent}}</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="text-manipulation">
     <h2>
