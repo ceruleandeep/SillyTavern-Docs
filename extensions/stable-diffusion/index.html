@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.784783852687">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.785769199413">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.784783852687" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.785769199413" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.784783852687" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.785769199413" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.784783852687" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.785769199413" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -363,7 +363,7 @@ You can configure the instruction template for generating prompts for every gene
 <p>Use a special {{charPrefix}} macro in free-prompt mode to include positive and negative prompt prefixes (if defined) for the current character.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/sd , riding a bike</code></pre>
+<pre class="language-none"><code v-pre class="language-none">/sd {{charPrefix}}, riding a bike</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="suppress-a-chat-message">
     <h4>
@@ -375,7 +375,7 @@ You can configure the instruction template for generating prompts for every gene
 <p>The example below will send the generated image using Markdown as a user persona.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/sd quiet=true me | /send Here's a picture of me: ![my portrait]()</code></pre>
+<pre class="language-none"><code v-pre class="language-none">/sd quiet=true me | /send Here's a picture of me: ![my portrait]({{pipe}})</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="image-swipes">
     <h3>
@@ -405,7 +405,7 @@ You can configure the instruction template for generating prompts for every gene
         <span>Use function tool</span>
     </h3>
 </doc-anchor-target>
-<p>Uses <a href="">function calling</a> to automatically detect.</p>
+<p>Uses <a href="">function calling</a> to automatically detect the intention to generate an image.</p>
 <p><strong>Requirements:</strong></p>
 <ol>
 <li>Must have image generation configured with a supported source.</li>
@@ -515,6 +515,7 @@ You can configure the instruction template for generating prompts for every gene
 <li>Common Prompt Prefix</li>
 <li>Negative Prompt</li>
 </ol>
+<p>You can also switch between styles using the <code v-pre>/imagine-style</code> command (or <code v-pre>/sd-style</code> or <code v-pre>/img-style</code>).</p>
 <doc-anchor-target id="chat-message-visibility">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#chat-message-visibility">#</doc-anchor-trigger>
@@ -523,6 +524,161 @@ You can configure the instruction template for generating prompts for every gene
 </doc-anchor-target>
 <p>Generated images inserted into the chat are hidden in the main API prompts by default, but this can be overriden individually per generation initiator (&quot;Magic wand&quot; icon, slash command, interactive mode). This can be used for making the experience more immersive by letting the characters &quot;acknowledge&quot; the images. Multimodal models in Chat Completions API may also &#x27;see&#x27; the images if &quot;Send inline images&quot; is enabled.</p>
 <p>A text message can be customized by changing the &quot;Chat Message Template&quot; under Image Prompt Templates. All regular macros can be used in this template, plus a special {{prompt}} macro to specify where the image prompt will be added.</p>
+<doc-anchor-target id="comfyui-configuration">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comfyui-configuration">#</doc-anchor-trigger>
+        <span>ComfyUI Configuration</span>
+    </h2>
+</doc-anchor-target>
+<p>ComfyUI is a fast and very flexible option for image generation.</p>
+<p>If you&#x27;re familiar with ComfyUI, the tl;dr is: make your workflow in ComfyUI, download it <strong>in API format</strong>, and paste it into the SillyTavern ComfyUI Workflow Editor. ST will submit your workflow to ComfyUI&#x27;s API and you will get an image in your chat. But with great power comes great responsibility, and the main responsibility is inserting placeholders in your workflow JSON so you can change settings from SillyTavern.</p>
+<p>If you&#x27;re not familiar with ComfyUI, you can still use it to generate images in SillyTavern using the default workflow. Later, when you want great power, you can learn how to use ComfyUI...</p>
+<doc-anchor-target id="controls">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#controls">#</doc-anchor-trigger>
+        <span>Controls</span>
+    </h3>
+</doc-anchor-target>
+<p>This panel allows you to configure and manage your ComfyUI integration with SillyTavern.</p>
+<p>Enter the URL of your ComfyUI server in the <strong>ComfyUI URL</strong> input field. The default value is <code v-pre>http://127.0.0.1:8188</code>. If you are using SwarmUI, the default port for the managed ComfyUI server is <code v-pre>7821</code>, 20 ports higher than the default port for SwarmUI.</p>
+<p>After entering the URL, choose <i class="fa-solid fa-check"></i> <strong>Connect</strong> to validate and establish a connection. The ComfyUI server must be accessible from the SillyTavern host machine.</p>
+<doc-anchor-target id="workflow-management">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#workflow-management">#</doc-anchor-trigger>
+        <span>Workflow Management</span>
+    </h3>
+</doc-anchor-target>
+<p>Select a ComfyUI workflow from the dropdown menu. Two default workflows are provided:</p>
+<ul>
+<li>Default_Comfy_Workflow.json: A basic text-to-image workflow supporting the most common image generation settings.</li>
+<li>Char_Avatar_Comfy_Workflow.json: A sample image-to-image workflow that uses the character avatar, plus the prompt, to generate an image.</li>
+</ul>
+<p>Use the following buttons to manage your workflows:</p>
+<ul>
+<li><i class="fa-solid fa-pen-to-square"></i> <strong>Open workflow editor</strong> to view and modify the selected workflow.</li>
+<li><i class="fa-solid fa-plus"></i> <strong>Create new workflow</strong> to create a new workflow with a custom name.</li>
+<li><i class="fa-solid fa-trash-can"></i> <strong>Delete workflow</strong> to remove the selected workflow.</li>
+</ul>
+<doc-anchor-target id="workflow-editor">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#workflow-editor">#</doc-anchor-trigger>
+        <span>Workflow Editor</span>
+    </h3>
+</doc-anchor-target>
+<p>The ComfyUI Workflow Editor allows you to view and modify ComfyUI workflows for use with SillyTavern.</p>
+<p>The main component of the editor is a large text area where you can insert or edit your ComfyUI workflow in JSON format.</p>
+<p>To add a ComfyUI workflow to the editor, follow these steps:</p>
+<ol>
+<li>Enable &#x27;Dev Mode&#x27; in ComfyUI settings.</li>
+<li>Use the &#x27;Save (API Format)&#x27; option in ComfyUI to download the JSON data.</li>
+<li>Create a new workflow in SillyTavern and open the editor.</li>
+<li>Paste the downloaded JSON data into the text area.</li>
+<li>Replace specific values with placeholders as needed for your use case.</li>
+</ol>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Tips</h5>
+<p>You can add the API-format JSON file directly to the <code v-pre>data/default-user/user/workflows</code> directory in your SillyTavern installation. This will save you from steps 3 and 4.</p>
+<p>Retain the original JSON file. If you need to open the workflow again in ComfyUI to make changes, it is much more convenient to edit the original file than the one with all the placeholders.</p>
+        </div>
+    </div>
+</div>
+<doc-anchor-target id="pre-defined-placeholders">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pre-defined-placeholders">#</doc-anchor-trigger>
+        <span>Pre-defined placeholders</span>
+    </h4>
+</doc-anchor-target>
+<p>The editor provides a list of predefined placeholders that can be used in your workflow JSON. These placeholders are replaced with dynamic values when the workflow is executed in SillyTavern.</p>
+<p>Placeholders marked with <span class="docs-emoji">&#x2705;</span> are present in your workflow JSON. Placeholders marked with <span class="docs-emoji">&#x274C;</span> are not present in your workflow JSON. You can add these placeholders to your workflow JSON as needed. You do not need to add all the placeholders, only the ones that your workflow uses and you want to replace dynamically.</p>
+<p>The <code v-pre>%prompt%</code> and <code v-pre>%negative_prompt%</code> placeholders are used to insert the image generation prompts into the workflow. These contain the final prompts generated by SillyTavern, including the generated prompt for your chosen <code v-pre>/sd</code> mode, the common prompt prefix, negative prompt, and character-specific prompt prefix.</p>
+<p>The <code v-pre>%model</code> placeholder will insert the value of the selected model in the image generation settings.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-300"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-blue-300" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+            <h5>Non-standard model types</h5>
+<p>Stable Diffusion checkpoints, SD UNets, and GGUF-quantized UNets all appear in the Model dropdown. You must ensure that your chosen workflow has the correct loader node for your chosen model type. If not, the error message from ComfyUI will indicate a problem with the loader node, but will not be particularly helpful apart from that.</p>
+        </div>
+    </div>
+</div>
+<p>Most other placeholders use the values of the corresponding controls in image generation settings, or the values that you specify with the <code v-pre>/sd</code> command:</p>
+<ul>
+<li><code v-pre>%vae%</code>, but most SD models include a VAE so the default workflows do not use this placeholder. Use it with custom workflows to load a VAE alongside a UNet, override the default VAE, etc.</li>
+<li><code v-pre>%sampler%</code></li>
+<li><code v-pre>%scheduler%</code></li>
+<li><code v-pre>%steps%</code></li>
+<li><code v-pre>%scale%</code></li>
+<li><code v-pre>%width%</code></li>
+<li><code v-pre>%height%</code></li>
+<li><code v-pre>%denoise%</code>: for the sample image-to-image workflow, vary the denoise amount between about 0.5 (barely-noticeable changes to the source image) and 1.0 (a completely different image as if no source image was used). Not used by the default text-to-image workflow because there&#x27;s no point using a value other than 1.0 for text-to-image.</li>
+<li><code v-pre>%clip_skip%</code>: not used by the default workflows but available for custom workflows.</li>
+</ul>
+<p>The <code v-pre>%seed%</code> placeholder will insert the seed value from the control if you have specified one. If you set the seed to <code v-pre>-1</code>, SillyTavern will generate a new random seed for each image in <code v-pre>%seed%</code>.</p>
+<p>Use the <code v-pre>%user_avatar%</code> and <code v-pre>%char_avatar%</code> placeholders to include the user and character avatars in the workflow. These placeholders are replaced with the PNG data of the avatars when the workflow is executed. The image data is encoded in base64 format, so you must decode it in your workflow. A popular choice for this task is the <a href="https://github.com/Acly/comfyui-tooling-nodes">Load image (Base64)</a> node.</p>
+<doc-anchor-target id="custom-placeholders">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#custom-placeholders">#</doc-anchor-trigger>
+        <span>Custom placeholders</span>
+    </h4>
+</doc-anchor-target>
+<p>You can add custom placeholders to your workflow:</p>
+<ol>
+<li>Look for the &quot;Custom&quot; section below the predefined placeholders.</li>
+<li>Click the &quot;+&quot; button to add a new custom placeholder.</li>
+<li>Enter a name for the placeholder in the <code v-pre>find</code> field.</li>
+<li>Enter the value that you want to replace the placeholder with in the <code v-pre>replace</code> field.</li>
+</ol>
+<p>Custom placeholders will appear in a separate list below the predefined ones.</p>
+<doc-anchor-target id="comfy-tricks">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#comfy-tricks">#</doc-anchor-trigger>
+        <span>Comfy tricks</span>
+    </h3>
+</doc-anchor-target>
+<p>Read all the general information on this page so you&#x27;re familiar with the image generation options. Options such as switchable styles and common prompt prefixes, when combined wih the total flexibility of ComfyUI workflows, allow you to create a wide variety of image generation setups.</p>
+<doc-anchor-target id="loading-loras">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#loading-loras">#</doc-anchor-trigger>
+        <span>Loading LoRAs</span>
+    </h4>
+</doc-anchor-target>
+<p>Use a LoRA tag loader node (such as <a href="https://github.com/badjeff/comfyui_lora_tag_loader">Load LoRA Tag</a>) to load any LoRAs specified in the prompt. Now you can add as many LoRAs as you like to your prompt with tags like <code v-pre>&lt;lora:CroissantStyle:0.8&gt;</code>, and they will be loaded into your workflow.</p>
+<doc-anchor-target id="setting-workflow-values-from-styles-or-slash-commands">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-workflow-values-from-styles-or-slash-commands">#</doc-anchor-trigger>
+        <span>Setting workflow values from styles or slash-commands**</span>
+    </h4>
+</doc-anchor-target>
+<p>You can use macros in custom placeholder values. As a practical example, let&#x27;s say you sometimes want to generate images without a background, and you&#x27;d like this to be switchable with a slash-command or image style. Here&#x27;s how you could do it:</p>
+<ol>
+<li>Make a ComfyUI workflow that removes the image background, or not, depending on the value of an input</li>
+<li>Use a custom placeholder to set the value of that input, but use <code v-pre>{{getvar::remove_background}}</code> as the replace value</li>
+<li>Now you can set the value of <code v-pre>remove_background</code> with <code v-pre>/setvar key=remove_background true</code> or <code v-pre>/setvar key=remove_background false</code> before generating an image</li>
+<li>The workflow will use the value you set to determine whether to remove the background</li>
+<li>Make an image style &quot;No background&quot; with common prompt prefix <code v-pre>{{setvar::remove_background::true}}{prompt}</code></li>
+<li>Use the style control or <code v-pre>/imagine-style No background</code> to set the value of <code v-pre>remove_background</code> to <code v-pre>true</code> before generating an image</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
