@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.785981738974">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.786000413866">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.785981738974" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.786000413866" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.785981738974" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.786000413866" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.785981738974" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.785981738974" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.786000413866" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.786000413866" defer></script>
 
     <style>
         a {
@@ -421,7 +421,7 @@ You can configure the instruction template for generating prompts for every gene
 <p>Use a <code v-pre>negative</code> named argument before the prompt to enforce a specific negative prompt for this generation.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/sd negative=&quot;ugly, fat&quot; cute girl eating a burger</code></pre>
+<pre class="language-none"><code v-pre class="language-none">/sd negative=&quot;fries&quot; cute tater farmer holding a tayto in a spud-field</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="include-a-character-specific-prefix">
     <h4>
@@ -429,10 +429,10 @@ You can configure the instruction template for generating prompts for every gene
         <span>Include a character-specific prefix</span>
     </h4>
 </doc-anchor-target>
-<p>Use a special {{charPrefix}} macro in free-prompt mode to include positive and negative prompt prefixes (if defined) for the current character.</p>
+<p>Use a special <code v-pre>{{charPrefix}}</code> macro in free-prompt mode to include positive and negative prompt prefixes (if defined) for the current character.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/sd , riding a bike</code></pre>
+<pre class="language-none"><code v-pre class="language-none">/sd {{charPrefix}}, riding a bike</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="suppress-a-chat-message">
     <h4>
@@ -444,7 +444,7 @@ You can configure the instruction template for generating prompts for every gene
 <p>The example below will send the generated image using Markdown as a user persona.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">stscript</div>
-<pre class="language-none"><code v-pre class="language-none">/sd quiet=true me | /send Here's a picture of me: ![my portrait]()</code></pre>
+<pre class="language-none"><code v-pre class="language-none">/sd quiet=true me | /send Here's a picture of me: ![my portrait]({{pipe}})</code></pre>
 </doc-codeblock></div>
 <doc-anchor-target id="image-swipes">
     <h3>
@@ -592,7 +592,7 @@ You can configure the instruction template for generating prompts for every gene
     </h2>
 </doc-anchor-target>
 <p>Generated images inserted into the chat are hidden in the main API prompts by default, but this can be overriden individually per generation initiator (&quot;Magic wand&quot; icon, slash command, interactive mode). This can be used for making the experience more immersive by letting the characters &quot;acknowledge&quot; the images. Multimodal models in Chat Completions API may also &#x27;see&#x27; the images if &quot;Send inline images&quot; is enabled.</p>
-<p>A text message can be customized by changing the &quot;Chat Message Template&quot; under Image Prompt Templates. All regular macros can be used in this template, plus a special {{prompt}} macro to specify where the image prompt will be added.</p>
+<p>A text message can be customized by changing the &quot;Chat Message Template&quot; under Image Prompt Templates. All regular macros can be used in this template, plus a special <code v-pre>{{prompt}}</code> macro to specify where the image prompt will be added.</p>
 <doc-anchor-target id="comfyui-configuration">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#comfyui-configuration">#</doc-anchor-trigger>
@@ -951,13 +951,15 @@ This will also make the &quot;pro-tip&quot; of using LoRAs in <doc-anchor-trigge
         <span>Setting workflow values from styles or slash-commands</span>
     </h4>
 </doc-anchor-target>
-<p>You can use macros in custom placeholder values. As a practical example, let&#x27;s say you sometimes want to generate images without a background, and you&#x27;d like this to be switchable with a slash-command or image style. Here&#x27;s how you could do it:</p>
+<p>You can use macros in custom placeholder values. As a practical example,
+let&#x27;s say you sometimes want to generate images without a background, and you&#x27;d like this to be switchable with a
+slash-command or image style. Here&#x27;s how you could do it:</p>
 <ol>
 <li>Make a ComfyUI workflow that removes the image background, or not, depending on the value of an input</li>
-<li>Use a custom placeholder to set the value of that input, but use <code>{{getvar::remove_background}}</code> as the replace value</li>
+<li>Use a custom placeholder to set the value of that input, but use <code v-pre>{{getvar::remove_background}}</code> as the replace value</li>
 <li>Now you can set the value of <code v-pre>remove_background</code> with <code v-pre>/setvar key=remove_background true</code> or <code v-pre>/setvar key=remove_background false</code> before generating an image</li>
 <li>The workflow will use the value you set to determine whether to remove the background</li>
-<li>Make an image style &quot;No background&quot; with common prompt prefix <code>{{setvar::remove_background::true}}</code></li>
+<li>Make an image style &quot;No background&quot; with common prompt prefix <code v-pre>{{setvar::remove_background::true}}</code></li>
 <li>Use the style control or <code v-pre>/imagine-style No background</code> to set the value of <code v-pre>remove_background</code> to <code v-pre>true</code> before generating an image</li>
 </ol>
 
