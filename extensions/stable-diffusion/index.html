@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.785894625529">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.785981738974">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Image Generation | docs.cd.foo</title>
     <meta name="title" content="Image Generation | docs.cd.foo">
-    <meta name="description" content="Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images. The free mode is also supported via the ">
+    <meta name="description" content="Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern-docs.cerulean.foo/extensions/stable-diffusion/">
@@ -20,24 +20,24 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern-docs.cerulean.foo/extensions/stable-diffusion/">
     <meta property="og:title" content="Image Generation | docs.cd.foo">
-    <meta property="og:description" content="Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images. The free mode is also supported via the ">
+    <meta property="og:description" content="Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images.">
     <meta property="og:image" content="https://sillytavern-docs.cerulean.foo/static/extensions/sd-comfy-prompt-primitive.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sillytavern-docs.cerulean.foo/extensions/stable-diffusion/">
     <meta property="twitter:title" content="Image Generation | docs.cd.foo">
-    <meta property="twitter:description" content="Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images. The free mode is also supported via the ">
+    <meta property="twitter:description" content="Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images.">
     <meta property="twitter:image" content="https://sillytavern-docs.cerulean.foo/static/extensions/sd-comfy-prompt-primitive.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.785894625529" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.785981738974" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.785894625529" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.785981738974" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.785894625529" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.785894625529" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.785981738974" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.785981738974" defer></script>
 
     <style>
         a {
@@ -234,30 +234,96 @@
         <span>Image Generation</span>
     </h1>
 </doc-anchor-target>
-<p>Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images.
-The free mode is also supported via the <code v-pre>/sd (anything_here)</code> command in the chat input bar.
-Most common Stable Diffusion generation settings are customizable within the SillyTavern UI.</p>
+<p>Use local or cloud-based Stable Diffusion, FLUX or DALL-E APIs to generate images.</p>
+<p>Automatically generate images as replies to your messages for full immersion,
+generate from chat history and character information from the wand menu or slash commands,
+or use the <code v-pre>/sd (anything_here)</code> command in the chat input bar to make an image with your own prompt.</p>
+<p>Most common Stable Diffusion generation settings are customizable within the SillyTavern UI.</p>
+<ul>
+<li>Supports <doc-anchor-trigger to="#supported-sources">multiple image generation sources</doc-anchor-trigger>, both local and cloud-based</li>
+<li>Various <doc-anchor-trigger to="#generation-modes">generation modes</doc-anchor-trigger> for characters, scenes, and custom prompts</li>
+<li><doc-anchor-trigger to="#how-to-generate-an-image">Slash commands</doc-anchor-trigger> for easy image generation within chats</li>
+<li><doc-anchor-trigger to="#use-interactive-mode">Interactive mode</doc-anchor-trigger> to trigger image generation based on natural language requests</li>
+<li>Customizable prompt templates and <doc-anchor-trigger to="#common-prompt-prefix">prefixes</doc-anchor-trigger> for consistent style and quality</li>
+<li><doc-anchor-trigger to="#character-specific-prompt-prefix">Character-specific prompt prefixes</doc-anchor-trigger> for tailored character images</li>
+<li><doc-anchor-trigger to="#styles">Style presets</doc-anchor-trigger> to quickly switch between different image generation settings</li>
+<li>Flexible <doc-anchor-trigger to="#chat-message-visibility">visibility options</doc-anchor-trigger> for generated images in chat</li>
+<li>Advanced <doc-anchor-trigger to="#comfyui-configuration">ComfyUI integration</doc-anchor-trigger> for highly customizable workflows</li>
+<li>Ability to <doc-anchor-trigger to="#view-all-generated-images">view all generated images</doc-anchor-trigger> in a character gallery</li>
+<li><doc-anchor-trigger to="#image-swipes">Image swipes</doc-anchor-trigger> feature to regenerate images while keeping the same prompt</li>
+<li>Options to <doc-anchor-trigger to="#edit-prompts-before-generation">edit prompts before generation</doc-anchor-trigger> and <doc-anchor-trigger to="#extend-free-mode-prompts">extend free-mode prompts</doc-anchor-trigger></li>
+<li>Integration with AI <doc-anchor-trigger to="#use-function-tool">function calling</doc-anchor-trigger> for automatic image generation detection</li>
+</ul>
 <doc-anchor-target id="supported-sources">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#supported-sources">#</doc-anchor-trigger>
-        <span>Supported Sources</span>
+        <span>Supported sources</span>
     </h2>
 </doc-anchor-target>
-<ul>
-<li><a href="https://blockentropy.ai/">Block Entropy</a></li>
-<li><a href="https://github.com/comfyanonymous/ComfyUI">ComfyUI</a>. Requires a workflow JSON file.</li>
-<li><a href="https://drawthings.ai/">Draw Things</a></li>
-<li><a href="https://huggingface.co/docs/api-inference/index">HuggingFace Serverless Inference</a></li>
-<li><a href="https://novelai.net/">NovelAI Diffusion</a>. Requires an active subscription.</li>
-<li><a href="https://platform.openai.com/">OpenAI DALL-E 2/3</a></li>
-<li><a href="https://pollinations.ai/">Pollinations</a></li>
-<li><a href="https://github.com/vladmandic/automatic">SD.Next / vladmandic</a></li>
-<li><a href="https://github.com/SillyTavern/SillyTavern-Extras">SillyTavern Extras</a> (deprecated, not recommended)</li>
-<li><a href="https://platform.stability.ai/">Stability AI</a></li>
-<li><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">Stable Diffusion WebUI / AUTOMATIC1111</a></li>
-<li><a href="https://stablehorde.net/">Stable Horde</a></li>
-<li><a href="https://api.together.xyz/models">TogetherAI</a></li>
-</ul>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: left;">Source</th>
+<th style="text-align: left;">Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="https://blockentropy.ai/">Block Entropy</a></td>
+<td style="text-align: left;">All services will be discontinued on December 31, 2024</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/comfyanonymous/ComfyUI">ComfyUI</a></td>
+<td style="text-align: left;">Local, open source (GPL3), free of charge, see <doc-anchor-trigger to="#comfyui-configuration">ComfyUI Configuration</doc-anchor-trigger>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://drawthings.ai/">Draw Things</a></td>
+<td style="text-align: left;">Local, Mac/iOS, free of charge</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://huggingface.co/docs/api-inference/index">HuggingFace Serverless</a></td>
+<td style="text-align: left;">Cloud, free of charge</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://novelai.net/">NovelAI Diffusion</a></td>
+<td style="text-align: left;">Cloud, requires an active subscription</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://platform.openai.com/">OpenAI DALL-E 2/3</a></td>
+<td style="text-align: left;">Cloud, requires an active subscription</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://pollinations.ai/">Pollinations</a></td>
+<td style="text-align: left;">Cloud, open source (MIT), free of charge</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/vladmandic/automatic">SD.Next / vladmandic</a></td>
+<td style="text-align: left;">Local, open source (AGPL3), free of charge</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/SillyTavern/SillyTavern-Extras">SillyTavern Extras</a></td>
+<td style="text-align: left;">Deprecated, not recommended</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://platform.stability.ai/">Stability AI</a></td>
+<td style="text-align: left;">Cloud, paid</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">Stable Diffusion WebUI / AUTOMATIC1111</a></td>
+<td style="text-align: left;">Local, open source (AGPL3), free of charge</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://stablehorde.net/">Stable Horde</a></td>
+<td style="text-align: left;">Cloud, open source (AGPL3), free of charge</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://api.together.xyz/models">TogetherAI</a></td>
+<td style="text-align: left;">Cloud</td>
+</tr>
+</tbody>
+</table>
+</div>
 <doc-anchor-target id="generation-modes">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#generation-modes">#</doc-anchor-trigger>
@@ -533,7 +599,7 @@ You can configure the instruction template for generating prompts for every gene
         <span>ComfyUI Configuration</span>
     </h2>
 </doc-anchor-target>
-<p>ComfyUI is a fast and very flexible option for image generation.</p>
+<p><a href="https://github.com/comfyanonymous/ComfyUI">ComfyUI</a> is a fast and very flexible option for image generation.</p>
 <p>If you&#x27;re familiar with ComfyUI, the tl;dr is: make your workflow in ComfyUI, download it <strong>in API format</strong>, and paste it into the SillyTavern ComfyUI Workflow Editor. ST will submit your workflow to ComfyUI&#x27;s API and you will get an image in your chat. But with great power comes great responsibility, and the main responsibility is inserting placeholders in your workflow JSON so you can change settings from SillyTavern.</p>
 <p>If you&#x27;re not familiar with ComfyUI, you can still use it to generate images in SillyTavern using the default workflow. Later, when you want great power, you can learn how to use ComfyUI...</p>
 <doc-anchor-target id="controls">
@@ -543,7 +609,10 @@ You can configure the instruction template for generating prompts for every gene
     </h3>
 </doc-anchor-target>
 <p>This panel allows you to configure and manage your ComfyUI integration with SillyTavern.</p>
-<p>Enter the URL of your ComfyUI server in the <strong>ComfyUI URL</strong> input field. The default value is <code v-pre>http://127.0.0.1:8188</code>. If you are using SwarmUI, the default port for the managed ComfyUI server is <code v-pre>7821</code>, 20 ports higher than the default port for SwarmUI.</p>
+<p>Enter the URL of your ComfyUI server in the <strong>ComfyUI URL</strong> input field. The default value is <code v-pre>http://127.0.0.1:8188</code>.
+If you are using <a href="https://github.com/mcmonkeyprojects/SwarmUI">SwarmUI</a>, the default port for the
+<a href="https://github.com/mcmonkeyprojects/SwarmUI/blob/master/src/BuiltinExtensions/ComfyUIBackend/README.md">managed ComfyUI server</a> is <code v-pre>7821</code>,
+20 ports higher than the default port for SwarmUI.</p>
 <p>After entering the URL, choose <i class="fa-solid fa-check"></i> <strong>Connect</strong> to validate and establish a connection. The ComfyUI server must be accessible from the SillyTavern host machine.</p>
 <doc-anchor-target id="workflow-management">
     <h3>
@@ -660,7 +729,7 @@ You can configure the instruction template for generating prompts for every gene
     },
     &quot;class_type&quot;: &quot;LoraTagLoader&quot;,
     &quot;_meta&quot;: {&quot;title&quot;: &quot;Load LoRA Tag&quot;}
-  }</code></pre>
+}</code></pre>
 </doc-codeblock></div>
 </doc-tab>
 <doc-tab v-cloak id="original-json">
@@ -798,7 +867,8 @@ If you choose an incompatible model type in ST, ComfyUI will report a problem wi
     }
 }</code></pre>
 </doc-codeblock></div>
-<p>To get a base64-encoded image string for testing your workflow in ComfyUI, use any online tool that converts images to base64 strings. Here&#x27;s an example string you can use for initial testing: <a href="../../static/extensions/sd-comfy-base64-test-string.txt">sd-base64-test-string.txt</a>.</p>
+<p>To get a base64-encoded image string for testing your workflow in ComfyUI, use any online tool that converts images to base64 strings.
+Here&#x27;s an example string you can use for initial testing: <a href="../../static/extensions/sd-comfy-base64-test-string.txt">sd-comfy-base64-test-string.txt</a>.</p>
 <doc-anchor-target id="other-placeholders">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#other-placeholders">#</doc-anchor-trigger>
@@ -872,7 +942,9 @@ If you choose an incompatible model type in ST, ComfyUI will report a problem wi
         <span>Loading LoRAs</span>
     </h4>
 </doc-anchor-target>
-<p>Use a LoRA tag loader node (such as <a href="https://github.com/badjeff/comfyui_lora_tag_loader">Load LoRA Tag</a>) to load any LoRAs specified in the prompt. Now you can add as many LoRAs as you like to your prompt with tags like <code v-pre>&lt;lora:CroissantStyle:0.8&gt;</code>, and they will be loaded into your workflow. This will also make the &quot;pro-tip&quot; of using LoRAs in <doc-anchor-trigger to="#character-specific-prompt-prefix">character-specific prompt prefixes</doc-anchor-trigger> work with ComfyUI.</p>
+<p>Use a LoRA tag loader node (such as <a href="https://github.com/badjeff/comfyui_lora_tag_loader">Load LoRA Tag</a>) to load any LoRAs specified in the prompt.
+Now you can add as many LoRAs as you like to your prompt with tags like <code v-pre>&lt;lora:CroissantStyle:0.8&gt;</code>, and they will be loaded into your workflow.
+This will also make the &quot;pro-tip&quot; of using LoRAs in <doc-anchor-trigger to="#character-specific-prompt-prefix">character-specific prompt prefixes</doc-anchor-trigger> work with ComfyUI.</p>
 <doc-anchor-target id="setting-workflow-values-from-styles-or-slash-commands">
     <h4>
         <doc-anchor-trigger class="header-anchor-trigger" to="#setting-workflow-values-from-styles-or-slash-commands">#</doc-anchor-trigger>
