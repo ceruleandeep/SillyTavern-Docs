@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.786276729355">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.786282877603">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -11,7 +11,7 @@
     <!-- Primary Meta Tags -->
     <title>Image Captioning | docs.cd.foo</title>
     <meta name="title" content="Image Captioning | docs.cd.foo">
-    <meta name="description" content="Image Captioning extension allows SillyTavern to automatically generate text descriptions for images used in chats.">
+    <meta name="description" content="Image Captioning allows SillyTavern to automatically generate text descriptions for images used in chats.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://sillytavern-docs.cerulean.foo/extensions/captioning/">
@@ -20,22 +20,22 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sillytavern-docs.cerulean.foo/extensions/captioning/">
     <meta property="og:title" content="Image Captioning | docs.cd.foo">
-    <meta property="og:description" content="Image Captioning extension allows SillyTavern to automatically generate text descriptions for images used in chats.">
+    <meta property="og:description" content="Image Captioning allows SillyTavern to automatically generate text descriptions for images used in chats.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sillytavern-docs.cerulean.foo/extensions/captioning/">
     <meta property="twitter:title" content="Image Captioning | docs.cd.foo">
-    <meta property="twitter:description" content="Image Captioning extension allows SillyTavern to automatically generate text descriptions for images used in chats.">
+    <meta property="twitter:description" content="Image Captioning allows SillyTavern to automatically generate text descriptions for images used in chats.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.786276729355" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.786282877603" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.786276729355" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.786282877603" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.786276729355" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.786276729355" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.786282877603" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.786282877603" defer></script>
 
     <style>
         a {
@@ -232,7 +232,7 @@
         <span>Image Captioning</span>
     </h1>
 </doc-anchor-target>
-<p>Image Captioning extension allows SillyTavern to automatically generate text descriptions for images used in chats.</p>
+<p>Image Captioning allows SillyTavern to automatically generate text descriptions for images used in chats.</p>
 <p>Use Image Captioning when you want your AI character to &quot;see&quot; and respond to visual content in your conversations.</p>
 <ul>
 <li>Create captions for images you upload or paste into messages</li>
@@ -294,7 +294,7 @@
 <tbody>
 <tr>
 <td><doc-anchor-trigger to="#multimodal-source">Multimodal</doc-anchor-trigger></td>
-<td>External services: OpenAI, Anthropic, Google, MistralAI, and others.  Local options: Ollama, llama.cpp, KoboldCpp, Text Generation WebUI, and vLLM. Highest-quality captioning options, supports custom prompts so you can ask your images questions.</td>
+<td><strong>Cloud</strong>: OpenAI, Anthropic, Google, MistralAI, and others. <br><strong>Local</strong>: Ollama, llama.cpp, KoboldCpp, Text Generation WebUI, and vLLM. <br>Supports custom prompts so you can ask your images questions.</td>
 </tr>
 <tr>
 <td><doc-anchor-trigger to="#local-source">Local</doc-anchor-trigger></td>
@@ -457,12 +457,10 @@
     </h3>
 </doc-anchor-target>
 <ul>
-<li><p><strong>Model</strong>: Choose the model for image captioning. Options vary based on the selected API.</p>
-</li>
-<li><p><strong>Allow reverse proxy</strong>: Toggle to allow using a reverse proxy if defined and valid (visible for specific APIs)</p>
-</li>
+<li><strong>Model</strong>: Choose the model for image captioning. Options vary based on the selected API.</li>
+<li><strong>Allow reverse proxy</strong>: Toggle to allow using a reverse proxy if defined and valid (OpenAI, Anthropic, Google, Mistral)</li>
 </ul>
-<p>API keys and endpoints should be set in the &#x27;API Connections&#x27; tab before using multimodal captioning.</p>
+<p>API keys and endpoint URLs for captioning sources are managed in the <a href="../../usage/api-connections/">API Connections</a> panel. Set the connection up in API Connections first, then select it as your captions source in Captioning.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -475,14 +473,14 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Set it up in the &#x27;API Connections&#x27; tab first</h5>
-<p>One last time: you configure the API key/address/port in <strong><i class="fa-solid fa-plug"></i> API Connections</strong> then use it in Captioning.</p>
-<p>You can still use Claude for your chats, and Google AI Studio for your image captioning, or whatever. Just set them <em>both</em> up in the &#x27;API Connections&#x27; tab first.</p>
+            <h5>Set it up in the API Connections panel first</h5>
+<p>One last time: configure the API key/address/port in <strong><i class="fa-solid fa-plug"></i> API Connections</strong> and use the connection in Captioning.</p>
+<p>You can still use Claude for chats and Google AI Studio for image captioning, or whatever. Just set them <em>both</em> up in the &#x27;API Connections&#x27; tab first. Then flip your Chat Completion source to Claude and your Captioning source to Google AI Studio.</p>
         </div>
     </div>
 </div>
-<p>For APIs marked with &quot;Requires endpoint configuration,&quot; you will need to set some options in the model backend rather than in SillyTavern.</p>
-<p>If ST can&#x27;t make your backend switch between models, and you want to use a different model via the same backend for text generation and captioning, you are out of luck. Even if you run two instances of the backend, there&#x27;s only one spot for the address and port in API Connections. But what if I were to tell you... that you can probably connect to your backend in both Text Completion and Chat Completion connection modes? Now you have two spots for configuration. You&#x27;re welcome.</p>
+<p>For most local backends, you will need to set some options in the model backend rather than in SillyTavern. If your backend can only run one model at a time and doesn&#x27;t support automatic switching, you are unfortunately going to have a hard time using the same backend for chat and captioning with different models.</p>
+<p>Even if you run two instances of the backend on different ports, API Connections only allows one active configuration per backend type. But what if I told you... that you can probably connect to your backend in both Text Completion and Chat Completion modes? Now you can have two connections to the same backend type.</p>
 <doc-anchor-target id="sources">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#sources">#</doc-anchor-trigger>
@@ -567,22 +565,22 @@
         <span>KoboldCpp</span>
     </h3>
 </doc-anchor-target>
+<p>For general information on installing and using <a href="https://github.com/LostRuins/koboldcpp">KoboldCpp</a>, see the <a href="https://github.com/LostRuins/koboldcpp/wiki">KoboldCpp documentation</a>.</p>
 <p>To use KoboldCpp for multimodal captioning:</p>
 <ul>
 <li>get a multimodal-capable model, trained to process text and image prompts at the same time.</li>
-<li>also get &quot;multimodal projections&quot; for the model. These weights allow the model to understand how the text and image parts of the input relate to each other.</li>
+<li>also get the multimodal projections for the model. These weights allow the model to understand how the text and image parts of the input relate to each other.</li>
 <li>load the model and projections in the KoboldCpp launch GUI or command line interface.</li>
 </ul>
-<p>The original and classic local multimodal model is LLaVA. Get the GGUF files for the model and projections from <a href="https://huggingface.co/Mozilla/llava-v1.5-7b-llamafile">Mozilla/llava-v1.5-7b-llamafile</a>. To load them from the command line, set the model and projections with the <code v-pre>--model</code> and <code v-pre>--mmproj</code> flags. For example:</p>
+<p>The original and classic local multimodal model is LLaVA. GGUF-format files for the model and projections are available from <a href="https://huggingface.co/Mozilla/llava-v1.5-7b-llamafile">Mozilla/llava-v1.5-7b-llamafile</a>. To load them from the command line, set the model and projections with the <code v-pre>--model</code> and <code v-pre>--mmproj</code> flags. For example:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">./koboldcpp \
 --model=&quot;models/llava-v1.5-7b-Q4_K.gguf&quot; \
 --mmproj=&quot;models/ llava-v1.5-7b-mmproj-Q4_0.gguf&quot; \
 ... other flags ...</code></pre>
 </doc-codeblock></div>
-<p>Some LLaVA finetunes you could try: <a href="https://huggingface.co/xtuner/llava-llama-3-8b-v1_1-gguf">xtuner/llava-llama-3-8b-v1_1-gguf</a>, <a href="https://huggingface.co/xtuner/llava-phi-3-mini-gguf">xtuner/llava-phi-3-mini-gguf</a>.</p>
-<p>You can use the multimodal projections for the base model that your particular finetune was built from. Have a look in <a href="https://huggingface.co/koboldcpp/mmproj/tree/main">koboldcpp/mmproj</a> and see if what you need is there.</p>
-<p>For the rest, see the <a href="https://github.com/LostRuins/koboldcpp/wiki#what-is-llava-and-mmproj">KoboldCpp documentation</a>.</p>
+<p>Some LLaVA finetunes you can try: <a href="https://huggingface.co/xtuner/llava-llama-3-8b-v1_1-gguf">xtuner/llava-llama-3-8b-v1_1-gguf</a>, <a href="https://huggingface.co/xtuner/llava-phi-3-mini-gguf">xtuner/llava-phi-3-mini-gguf</a>.</p>
+<p>You can use multimodal projections for the base model that your particular finetune was built from. Projections for some common base models are available from <a href="https://huggingface.co/koboldcpp/mmproj/tree/main">koboldcpp/mmproj</a>.</p>
 
                                 
                                 <!-- Required only on API pages -->
