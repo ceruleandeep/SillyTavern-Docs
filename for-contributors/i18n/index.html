@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.787671388086">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.787671685517">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -21,21 +21,23 @@
     <meta property="og:url" content="https://sillytavern-docs.cerulean.foo/for-contributors/i18n/">
     <meta property="og:title" content="Internationalization (i18n) | docs.cd.foo">
     <meta property="og:description" content="SillyTavern supports multiple languages. This guide explains how to add and manage translations.">
+    <meta property="og:image" content="https://sillytavern-docs.cerulean.foo/static/i18n/generate-image-pre.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sillytavern-docs.cerulean.foo/for-contributors/i18n/">
     <meta property="twitter:title" content="Internationalization (i18n) | docs.cd.foo">
     <meta property="twitter:description" content="SillyTavern supports multiple languages. This guide explains how to add and manage translations.">
+    <meta property="twitter:image" content="https://sillytavern-docs.cerulean.foo/static/i18n/generate-image-pre.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.787671388086" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.787671685517" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.787671388086" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.787671685517" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.787671388086" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.787671388086" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.787671685517" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.787671685517" defer></script>
 
     <style>
         a {
@@ -263,7 +265,7 @@ your work is ready for other people to translate it into their language.</p>
 </doc-anchor-target>
 <p>The text &quot;Generate Image&quot; is untranslated in the Chinese (Traditional) locale. Why?</p>
 <p><figure class="content-center">
-    <img src="../static/i18n/generate-image-pre.png" alt="generate-image-pre.png">
+    <img src="../../static/i18n/generate-image-pre.png" alt="generate-image-pre.png">
     <figcaption class="caption">generate-image-pre.png</figcaption>
 </figure>
 </p>
@@ -292,7 +294,7 @@ your work is ready for other people to translate it into their language.</p>
 </doc-codeblock></div>
 <p>We are in luck, that string <code v-pre>Generate Image</code> is in many of the language files, including in Chinese (Traditional).</p>
 <p><figure class="content-center">
-    <img src="../static/i18n/generate-image-lang.png" alt="generate-image-lang.png">
+    <img src="../../static/i18n/generate-image-lang.png" alt="generate-image-lang.png">
     <figcaption class="caption">generate-image-lang.png</figcaption>
 </figure>
 </p>
@@ -317,14 +319,14 @@ your work is ready for other people to translate it into their language.</p>
 </doc-codeblock></div>
 <p>Now it works! Reload the page and see.</p>
 <p><figure class="content-center">
-    <img src="../static/i18n/generate-image-post.png" alt="generate-image-post.png">
+    <img src="../../static/i18n/generate-image-post.png" alt="generate-image-post.png">
     <figcaption class="caption">generate-image-post.png</figcaption>
 </figure>
 </p>
 <p>But while we have the HTML open, what&#x27;s with <code v-pre>Stop Image Generation</code> just under it? The HTML doesn&#x27;t look right.</p>
 <p>If we generate an image and then open the wand menu while it&#x27;s generating, we see untranslated text.</p>
 <p><figure class="content-center">
-    <img src="../static/i18n/stop-generating-image-pre.png" alt="stop-generating-image-pre.png">
+    <img src="../../static/i18n/stop-generating-image-pre.png" alt="stop-generating-image-pre.png">
     <figcaption class="caption">stop-generating-image-pre.png</figcaption>
 </figure>
 </p>
@@ -363,7 +365,7 @@ file. We can add it! Here&#x27;s one possible translation:</p>
 <li>Japanese: &quot;Stop Image Generation&quot;: &quot;画像生成を停止&quot;</li>
 </ul>
 <p><figure class="content-center">
-    <img src="../static/i18n/stop-generating-post-2.png" alt="stop-generating-post-2.png">
+    <img src="../../static/i18n/stop-generating-post-2.png" alt="stop-generating-post-2.png">
     <figcaption class="caption">stop-generating-post-2.png</figcaption>
 </figure>
 </p>
@@ -375,7 +377,7 @@ file. We can add it! Here&#x27;s one possible translation:</p>
 </doc-anchor-target>
 <p>&quot;Generate Caption&quot; is untranslated in the Chinese (Traditional) locale. Let&#x27;s fix it!</p>
 <p><figure class="content-center">
-    <img src="../static/i18n/generate-image-post.png" alt="generate-image-post.png">
+    <img src="../../static/i18n/generate-image-post.png" alt="generate-image-post.png">
     <figcaption class="caption">generate-image-post.png</figcaption>
 </figure>
 </p>
@@ -418,7 +420,7 @@ const sendButton = $(`
 <li>Japanese: &quot;Generate Caption&quot;: &quot;画像説明を生成&quot;</li>
 </ul>
 <p><figure class="content-center">
-    <img src="../static/i18n/generate-caption-post.png" alt="generate-caption-post.png">
+    <img src="../../static/i18n/generate-caption-post.png" alt="generate-caption-post.png">
     <figcaption class="caption">generate-caption-post.png</figcaption>
 </figure>
 </p>
@@ -482,7 +484,7 @@ const disabledText = t`プロンプトを検査`;</code></pre>
 }</code></pre>
 </doc-codeblock></div>
 <p><figure class="content-center">
-    <img src="../static/i18n/toggle-prompt-inspection-post-tt.png" alt="toggle-prompt-inspection-post-tt.png">
+    <img src="../../static/i18n/toggle-prompt-inspection-post-tt.png" alt="toggle-prompt-inspection-post-tt.png">
     <figcaption class="caption">toggle-prompt-inspection-post-tt.png</figcaption>
 </figure>
 </p>
@@ -515,7 +517,7 @@ the <code v-pre>t</code> function.</p>
 repo: <a href="https://github.com/SillyTavern/Extension-PromptInspector/pull/1">https://github.com/SillyTavern/Extension-PromptInspector/pull/1</a></p>
 <p>The translations will be added to the main SillyTavern repo. <a href="https://github.com/SillyTavern/SillyTavern/pull/3198">https://github.com/SillyTavern/SillyTavern/pull/3198</a></p>
 <p><figure class="content-center">
-    <img src="../static/i18n/start-inspecting-post.png" alt="start-inspecting-post.png">
+    <img src="../../static/i18n/start-inspecting-post.png" alt="start-inspecting-post.png">
     <figcaption class="caption">start-inspecting-post.png</figcaption>
 </figure>
 </p>
