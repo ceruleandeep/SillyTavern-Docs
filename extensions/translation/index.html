@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.787642422112">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.787644141535">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,12 +32,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.787642422112" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.787644141535" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.787642422112" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.787644141535" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.787642422112" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.787642422112" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.787644141535" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.787644141535" defer></script>
 
     <style>
         a {
@@ -308,7 +308,8 @@ Extensions</strong> menu</p>
 <li>Translates just the current input text</li>
 <li>Useful before sending a message</li>
 </ul>
-<p><strong><i class="fa-solid fa-language"></i> Translate Message</strong> icon in the <strong><i class="fa-solid fa-ellipsis"></i> Message Actions</strong>
+<p><strong><i class="fa-solid fa-language"></i> Translate Message</strong> icon in the <strong><i class="fa-solid fa-ellipsis"></i> Message
+Actions</strong>
 toolbar of any message</p>
 <ul>
 <li>Click to translate just that message</li>
@@ -500,8 +501,8 @@ not provided, the value from the extension settings will be used.</p>
     </h3>
 </doc-anchor-target>
 <p>Prompt the user for a message and a language, translate the message into that language, then re-translate it into the
-configured target language and show both translations in a popup. This example uses the <code v-pre>/input</code> and <code v-pre>/buttons</code> commands to
-gather user input:</p>
+configured target language and show both translations in a popup. This example uses the <code v-pre>/input</code> and <code v-pre>/buttons</code> commands
+to gather user input:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">/input default=&quot;Hello, world!&quot; &lt;span data-i18n=&quot;Test Message&quot;&gt;Sample text&lt;/span&gt; | 
 /let key=input ||
@@ -571,7 +572,7 @@ somewhere important.</p>
 <li>UTF-8 encoding, special characters, and emojis are supported</li>
 <li>Handles large messages by splitting into chunks when needed</li>
 <li>Preserves formatting and embedded images in messages</li>
-<li>Caches translations to avoid redundant API callschecking</li>
+<li>Caches translations to avoid redundant API calls</li>
 </ul>
 <doc-anchor-target id="ai-input-language">
     <h3>
@@ -579,14 +580,20 @@ somewhere important.</p>
         <span>AI input language</span>
     </h3>
 </doc-anchor-target>
-<p><code v-pre>internal_language</code> controls the language into which user messages are auto-translated before being sent to the AI. It is hardcoded to &#x27;en&#x27; in the default settings and cannot be changed through the UI. Thus, the translation target language for messages <em>to the AI</em> is always English. Previous testing showed that AI performance was better when receiving English messages, but this may change as more LLMs are being trained on more varied language data. I suppose one could change <code v-pre>internal_language</code> in <code v-pre>settings.json</code> and find out.</p>
+<p><code v-pre>internal_language</code> controls the language into which user messages are auto-translated before being sent to the AI. It
+is hardcoded to &#x27;en&#x27; in the default settings and cannot be changed through the UI. Thus, the translation target language
+for messages <em>to the AI</em> is always English. Previous testing showed that AI performance was better when receiving
+English messages, but this may change as more LLMs are being trained on more varied language data. I suppose one could
+change <code v-pre>internal_language</code> in <code v-pre>settings.json</code> and find out.</p>
 <doc-anchor-target id="chinese-variant-handling">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#chinese-variant-handling">#</doc-anchor-trigger>
         <span>Chinese variant handling</span>
     </h3>
 </doc-anchor-target>
-<p>The extension supports both Simplified and Traditional Chinese, but not all translation providers do. The UI presents these as &#x27;Chinese (Simplified)&#x27; and &#x27;Chinese (Traditional)&#x27; respectively, with language codes &#x27;zh-CN&#x27; and &#x27;zh-TW&#x27;. They are mapped to the following language codes for translation providers:</p>
+<p>The extension supports both Simplified and Traditional Chinese, but not all translation providers do. The UI presents
+these as &#x27;Chinese (Simplified)&#x27; and &#x27;Chinese (Traditional)&#x27; respectively, with language codes &#x27;zh-CN&#x27; and &#x27;zh-TW&#x27;. They
+are mapped to the following language codes for translation providers:</p>
 <ul>
 <li>Libre Translate: &#x27;zh-CN&#x27; to &#x27;zh&#x27; and &#x27;zh-TW&#x27; to &#x27;zt&#x27;.</li>
 <li>DeepL and DeepLX: both variants to &#x27;ZH&#x27;.</li>
